@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import React from 'react';
 import './button.css';
 
@@ -38,7 +39,17 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      css={
+        css`
+          font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-weight: 700;
+          border: 0;
+          border-radius: 3em;
+          cursor: pointer;
+          display: inline-block;
+          line-height: 1;
+      `}
+      className={[`storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >

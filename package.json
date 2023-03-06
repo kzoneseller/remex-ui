@@ -5,12 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "rimraf -rf dist",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "emotion-normalize": "^11.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -23,12 +27,12 @@
     "@storybook/react": "^7.0.0-beta.61",
     "@storybook/react-vite": "^7.0.0-beta.61",
     "@storybook/testing-library": "^0.0.14-next.1",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react-swc": "^3.0.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.2.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.0-beta.61",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
   }
 }
