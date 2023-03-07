@@ -1,19 +1,22 @@
-import type { StorybookConfig } from "@storybook/react-vite";
-
-const path = require('path');
-const { loadConfigFromFile } = require('vite');
-const react = require('@vitejs/plugin-react');
-
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", "@storybook/addon-mdx-gfm"],
+  stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm',
+  ],
   framework: {
-    name: "@storybook/react-vite",
-    options: {}
+    name: '@storybook/react-vite',
+    options: {},
   },
   docs: {
-    autodocs: "tag"
+    autodocs: 'tag',
+  },
+  typescript: {
+    check: false,
   },
 };
 export default config;

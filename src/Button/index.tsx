@@ -1,6 +1,7 @@
+import './button.css';
+
 import { css } from '@emotion/react';
 import React from 'react';
-import './button.css';
 
 interface ButtonProps {
   /**
@@ -16,7 +17,7 @@ interface ButtonProps {
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Button contents
+   * Index contents
    */
   label: string;
   /**
@@ -28,26 +29,19 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
+const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      css={
-        css`
-          font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-weight: 700;
-          border: 0;
-          border-radius: 3em;
-          cursor: pointer;
-          display: inline-block;
-          line-height: 1;
+      css={css`
+        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        border: 0;
+        border-radius: 3em;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1;
       `}
       className={[`storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
@@ -57,3 +51,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

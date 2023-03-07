@@ -1,15 +1,23 @@
 {
   "name": "remex-ui",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
-  "type": "module",
+  "author": "remex dev@kzoneseller.com",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "main": "./dist/remex-ui.umd.js",
+  "module": "./dist/remex-ui.es.js",
+  "types": "./types/main.d.ts",
   "scripts": {
     "dev": "vite",
-    "prebuild": "rimraf -rf dist",
-    "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "prebuild": "rimraf -rf dist && rimraf -rf types",
+    "build": "tsc && vite build",
+    "build-storybook": "storybook build",
+    "types": "tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -29,10 +37,25 @@
     "@storybook/testing-library": "^0.0.14-next.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "@vitejs/plugin-react-swc": "^3.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
+    "rimraf": "^4.3.1",
     "storybook": "^7.0.0-beta.61",
     "typescript": "^4.9.5",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "vite-plugin-dts": "^2.0.2",
+    "vite-plugin-svgr": "^2.4.0"
   }
 }
