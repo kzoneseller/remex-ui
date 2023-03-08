@@ -114,5 +114,11 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'off',
       },
     },
+    {
+      files: ['*.stories.@(ts|tsx|mdx)'],
+      rules: {
+        'react/function-component-definition': 'off',
+      },
+    },
   ],
 };
