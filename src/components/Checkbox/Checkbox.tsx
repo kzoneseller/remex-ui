@@ -9,17 +9,17 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   customStyle?: CSSObject;
 }
 
-const Checkbox: FC<CheckboxProps> = ({ color = 'blue', checked = false, customStyle, ...props }) => {
+const Checkbox: FC<CheckboxProps> = ({ color = 'blue', customStyle, ...props }) => {
   const { colors } = useTheme();
 
   const COLORS = {
     blue: colors.mainBlue,
     black: colors.mainBlack,
     grey: colors.mainGrey,
-    red: colors.red,
+    red: colors.error,
   };
 
-  return <StyledCheckbox type="checkbox" color={COLORS[color]} checked={checked} css={customStyle} {...props} />;
+  return <StyledCheckbox type="checkbox" color={COLORS[color]} css={customStyle} {...props} />;
 };
 
 export default Checkbox;

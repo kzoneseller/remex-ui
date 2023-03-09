@@ -1,5 +1,5 @@
 import type { CSSObject } from '@emotion/react';
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Actions, Body, InnerBorder, StyledCard, Title } from './card.styles';
 
@@ -8,9 +8,10 @@ interface CardProps {
   actions?: ReactNode;
   showBorder?: boolean;
   customStyle?: CSSObject;
+  children?: ReactNode;
 }
 
-const Card: FC<PropsWithChildren<CardProps>> = ({ title, actions, showBorder = false, customStyle, children }) => {
+const Card: FC<CardProps> = ({ title, actions, showBorder = false, customStyle, children }) => {
   return (
     <StyledCard css={customStyle}>
       <Body>

@@ -21,6 +21,14 @@ export const StyledButton = styled.button<{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
 
+  :disabled {
+    cursor: default;
+    color: ${({ theme: { colors } }) => colors.textGrey};
+    background-color: ${({ theme: { colors } }) => colors.lightGray};
+    border: none;
+    box-shadow: none;
+  }
+
   ${({ variant, color, theme: { colors } }) => VARIANT[variant]({ color: color, backgroundColor: colors.white })};
 
   ${({ size }) => SIZE[size]};

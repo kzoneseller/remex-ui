@@ -1,6 +1,6 @@
 const white = '#ffffff';
 const black = '#000000';
-const red = '#EF4E3A';
+const error = '#EF4E3A';
 
 const lightColors = {
   /* blue */
@@ -24,7 +24,7 @@ const lightColors = {
   bgBlue: '#F9FAFB',
   iconBlue: '#A1A0BD',
   border: '#E0DFF0',
-  red,
+  error,
 };
 
 const darkColors = {

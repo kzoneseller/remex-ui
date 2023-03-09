@@ -27,7 +27,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     blue: colors.mainBlue,
     black: colors.mainBlack,
     grey: colors.mainGrey,
-    red: colors.red,
+    red: colors.error,
   };
 
   return (
