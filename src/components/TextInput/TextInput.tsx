@@ -1,4 +1,4 @@
-import { CSSObject } from '@emotion/react/dist/emotion-react.cjs';
+import type { CSSObject } from '@emotion/react';
 import type { FC, InputHTMLAttributes, ReactElement } from 'react';
 
 import { InnerInput, Input, Label, StyledTextInput } from './textInput.styles';

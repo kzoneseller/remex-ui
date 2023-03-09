@@ -1,8 +1,10 @@
 export * as Button from './Button';
 export * as Card from './Card';
+export * as Checkbox from './Checkbox';
 export * from './Divider';
 export * as Header from './Header';
 export * as Layout from './Layout';
 export * from './Menu';
 export * as SideNavigation from './SideNavigation';
+export * as TextInput from './TextInput';
 export * from '@tabler/icons-react';
