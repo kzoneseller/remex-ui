@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { useState } from 'react';
 import { useTheme } from 'utils/theme';
 
-import { Contents, Info, NickName, StyledHeader, Title, Wrapper } from './Header.styles';
+import { Contents, Info, NickName, StyledHeader, Title, Wrapper } from './header.styles';
 
 interface HeaderProps {
   title: ReactNode;

@@ -1,7 +1,7 @@
 import { CSSObject } from '@emotion/react/dist/emotion-react.cjs';
 import type { FC, InputHTMLAttributes, ReactElement } from 'react';
 
-import { InnerInput, Input, Label, StyledTextInput } from './TextInput.styles';
+import { InnerInput, Input, Label, StyledTextInput } from './textInput.styles';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   fullWidth?: boolean;

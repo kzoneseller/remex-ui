@@ -1,7 +1,7 @@
 import type { CSSObject } from '@emotion/react';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
-import { Actions, Body, InnerBorder, StyledCard, Title } from './Card.styles';
+import { Actions, Body, InnerBorder, StyledCard, Title } from './card.styles';
 
 interface CardProps {
   title?: string;

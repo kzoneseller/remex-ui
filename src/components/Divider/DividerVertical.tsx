@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import DividerStyle from './Divider.styles';
+import DividerStyle from './divider.styles';
 
 const DividerVertical = styled.div`
   ${DividerStyle};

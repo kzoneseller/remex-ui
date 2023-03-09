@@ -2,7 +2,7 @@ import type { CSSObject } from '@emotion/react';
 import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import { useTheme } from 'utils/theme';
 
-import { StyledButton } from './Button.styles';
+import { StyledButton } from './button.styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'contained' | 'outlined' | 'ghost';

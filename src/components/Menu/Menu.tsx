@@ -1,7 +1,7 @@
 import type { CSSObject } from '@emotion/react';
 import type { FC, PropsWithChildren } from 'react';
 
-import { MenuTitle, StyledMenu } from './Menu.styles';
+import { MenuTitle, StyledMenu } from './menu.styles';
 
 interface MenuProp {
   title?: string;

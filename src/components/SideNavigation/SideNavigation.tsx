@@ -2,7 +2,7 @@ import type { CSSObject } from '@emotion/react';
 import { Logo } from 'assets/svg';
 import type { FC, PropsWithChildren } from 'react';
 
-import { Contents, LogoWrapper, StyledSideNavigation } from './SideNavigation.styles';
+import { Contents, LogoWrapper, StyledSideNavigation } from './sideNavigation.styles';
 
 interface SideNavigationProps {
   customStyle?: CSSObject;
