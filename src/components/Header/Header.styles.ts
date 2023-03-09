@@ -31,6 +31,7 @@ export const Title = styled.div`
   font-weight: 700;
   line-height: 33px;
   color: ${({ theme }) => theme.colors.mainBlue};
+  user-select: none;
 `;
 
 export const Contents = styled.div`

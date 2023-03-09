@@ -1,6 +1,6 @@
 import type { CSSObject } from '@emotion/react';
 import { Logo } from 'assets/svg';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { Contents, LogoWrapper, StyledSideNavigation } from './SideNavigation.styles';
 
@@ -8,7 +8,7 @@ interface SideNavigationProps {
   customStyle?: CSSObject;
 }
 
-const SideNavigation = ({ children, customStyle }: PropsWithChildren<SideNavigationProps>) => {
+const SideNavigation: FC<PropsWithChildren<SideNavigationProps>> = ({ children, customStyle }) => {
   return (
     <StyledSideNavigation css={customStyle}>
       <LogoWrapper>

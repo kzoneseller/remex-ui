@@ -1,6 +1,6 @@
 import type { CSSObject } from '@emotion/react';
 import { IconChevronDown, IconUserCircle } from '@tabler/icons-react';
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { useState } from 'react';
 import { useTheme } from 'utils/theme';
 
@@ -13,7 +13,7 @@ interface HeaderProps {
   onClick?: () => void;
 }
 
-const Header = ({ title, userName, customStyle, onClick, children }: PropsWithChildren<HeaderProps>) => {
+const Header: FC<PropsWithChildren<HeaderProps>> = ({ title, userName, customStyle, onClick, children }) => {
   const {
     colors: { iconBlue },
   } = useTheme();

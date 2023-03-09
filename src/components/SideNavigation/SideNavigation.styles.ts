@@ -9,6 +9,7 @@ export const StyledSideNavigation = styled.nav`
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: ${({ theme }) => theme.colors.white};
+  user-select: none;
 
   @media (min-width: 1024px) {
     overflow-y: auto;
