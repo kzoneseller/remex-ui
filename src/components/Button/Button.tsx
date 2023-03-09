@@ -5,7 +5,7 @@ import { useTheme } from 'utils/theme';
 import { StyledButton } from './Button.styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'contained' | 'outlined';
+  variant?: 'contained' | 'outlined' | 'ghost';
   color?: 'blue' | 'black' | 'grey' | 'red';
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;

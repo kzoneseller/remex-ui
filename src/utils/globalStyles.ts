@@ -283,4 +283,8 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     --lightBlack: ${theme.colors.lightBlack};
     --darkBlack: ${theme.colors.darkBlack};
   }
+
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
 `;
