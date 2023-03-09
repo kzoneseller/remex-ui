@@ -18,10 +18,12 @@ const lightColors = {
   lightGray: '#EAE9E7',
   darkGray: '#5C5C5C',
   ghostGray: '#F5F6F8',
+  textGrey: '#9C9C9C',
   /* common */
   white,
   bgBlue: '#F9FAFB',
   iconBlue: '#A1A0BD',
+  border: '#E0DFF0',
   red,
 };
 
