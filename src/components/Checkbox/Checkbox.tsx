@@ -4,7 +4,7 @@ import { useTheme } from 'utils/theme';
 
 import { StyledCheckbox } from './checkbox.styles';
 
-interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   color?: 'blue' | 'black' | 'grey' | 'red';
   customStyle?: CSSObject;
 }
@@ -19,7 +19,7 @@ const Checkbox: FC<CheckboxProps> = ({ color = 'blue', customStyle, ...props }) 
     red: colors.error,
   };
 
-  return <StyledCheckbox type="checkbox" color={COLORS[color]} css={customStyle} {...props} />;
+  return <StyledCheckbox type="checkbox" color={COLORS[color]} css={{ customStyle }} {...props} />;
 };
 
 export default Checkbox;

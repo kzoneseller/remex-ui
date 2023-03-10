@@ -5,7 +5,7 @@ import type { keyframes } from 'constants/keyframes';
 
 declare module '@emotion/react' {
   export interface Theme {
-    colors: Record<keyof typeof colors, string>;
-    keyframes: Record<keyof typeof keyframes, string>;
+    colors: colors;
+    keyframes: keyframes;
   }
 }

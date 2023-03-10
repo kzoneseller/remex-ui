@@ -27,8 +27,21 @@ const wave = emotionKeyframes`
   }
 `;
 
+const checkmark = emotionKeyframes`
+  0% {
+    background-position-y: 5px;
+  }
+  50% {
+    background-position-y: -2px;
+  }
+  100% {
+    background-position-y: 0;
+  }
+`;
+
 export const keyframes = {
   fadeInDim,
   pulse,
   wave,
+  checkmark,
 };
