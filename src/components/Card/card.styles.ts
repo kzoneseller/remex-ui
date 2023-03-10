@@ -4,16 +4,6 @@ export const StyledCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-`;
-
-export const Title = styled.div`
-  color: ${({ theme: { colors } }) => colors.mainBlue};
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
-  margin-bottom: 42px;
-  user-select: none;
 `;
 
 export const Body = styled.div`
@@ -24,6 +14,15 @@ export const Body = styled.div`
   box-shadow: 0 10px 25px rgba(151, 143, 175, 0.04);
   border-radius: 10px;
   padding: 32px 28px;
+`;
+
+export const Title = styled.div`
+  color: ${({ theme: { colors } }) => colors.mainBlue};
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 42px;
+  user-select: none;
 `;
 
 export const InnerBorder = styled.div<{ showBorder: boolean }>`

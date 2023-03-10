@@ -1,13 +1,13 @@
 import type { CSSObject } from '@emotion/react';
 import { IconChevronLeft, IconChevronRight, IconChevronsLeft, IconChevronsRight } from '@tabler/icons-react';
-import type { FC, MouseEvent } from 'react';
+import type { FC, SyntheticEvent } from 'react';
 
 import { Icon, StyledPagination, StyledPaginationItem } from './pagination.styles';
 
 interface PaginationProps {
   count: number;
   currentPage: number;
-  onChange?: (e: MouseEvent<HTMLDivElement>, value: number) => void;
+  onChange?: (e: SyntheticEvent<HTMLDivElement>, value: number) => void;
   showFirstButton?: boolean;
   showPrevButton?: boolean;
   showLastButton?: boolean;
