@@ -1,5 +1,6 @@
 import type { CSSObject } from '@emotion/react';
 import type { FC, ReactNode } from 'react';
+import { useMemo } from 'react';
 
 import { Actions, Body, InnerBorder, StyledCard, Title } from './card.styles';
 
@@ -12,14 +13,21 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ title, actions, showBorder = false, customStyle, children }) => {
+  const contents = useMemo(
+    () => (
+      <>
+        {children}
+        {Boolean(actions) && <Actions>{actions}</Actions>}
+      </>
+    ),
+    [actions, children]
+  );
+
   return (
     <StyledCard css={customStyle}>
       <Body>
         {Boolean(title) && <Title>{title}</Title>}
-        <InnerBorder showBorder={showBorder}>
-          {children}
-          {Boolean(actions) && <Actions>{actions}</Actions>}
-        </InnerBorder>
+        {showBorder ? <InnerBorder>{contents}</InnerBorder> : contents}
       </Body>
     </StyledCard>
   );

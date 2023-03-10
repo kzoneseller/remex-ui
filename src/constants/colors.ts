@@ -24,6 +24,7 @@ const lightColors = {
   bgBlue: '#F9FAFB',
   iconBlue: '#A1A0BD',
   border: '#E0DFF0',
+  line: '#F6F7FB',
   error,
 };
 

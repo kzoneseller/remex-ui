@@ -25,8 +25,8 @@ export const Title = styled.div`
   user-select: none;
 `;
 
-export const InnerBorder = styled.div<{ showBorder: boolean }>`
-  border: ${({ showBorder, theme: { colors } }) => showBorder && `2px solid ${colors.mainBlue}`};
+export const InnerBorder = styled.div`
+  border: 2px solid ${({ theme: { colors } }) => colors.mainBlue};
   border-radius: 4px;
   padding: 25px 36px;
   gap: 0.5rem;
