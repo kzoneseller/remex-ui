@@ -26,3 +26,6 @@ dist-ssr
 # component test
 src/main.tsx
 index.html
+
+storybook-static
+types

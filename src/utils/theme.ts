@@ -1,7 +1,6 @@
 import { useTheme as EmotionUseTheme } from '@emotion/react';
-
-import { darkColors, lightColors } from '../constants/colors';
-import { keyframes } from '../constants/keyframes';
+import { darkColors, lightColors } from 'constants/colors';
+import { keyframes } from 'constants/keyframes';
 
 const defaultTheme = {
   keyframes,

@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { resolve } from 'path';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
@@ -17,6 +18,19 @@ const config: StorybookConfig = {
   },
   typescript: {
     check: false,
+  },
+  viteFinal: async (config, { configType }) => {
+    if (config.resolve?.alias)
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        assets: resolve(__dirname, '../src/assets'),
+        components: resolve(__dirname, '../src/components'),
+        constants: resolve(__dirname, '../src/constants'),
+        types: resolve(__dirname, '../src/types'),
+        utils: resolve(__dirname, '../src/utils'),
+      };
+
+    return config;
   },
 };
 export default config;

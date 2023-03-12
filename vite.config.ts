@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react-swc';
-import path from 'path';
+import { resolve } from 'path';
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import dts from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
@@ -8,7 +8,7 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'RemexUi',
       fileName: format => `remex-ui.${format}.js`,
     },
@@ -35,11 +35,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      assets: path.resolve(__dirname, './src/assets'),
-      components: path.resolve(__dirname, './src/components'),
-      constants: path.resolve(__dirname, './src/constants'),
-      types: path.resolve(__dirname, './src/types'),
-      utils: path.resolve(__dirname, './src/utils'),
+      assets: resolve(__dirname, 'src/assets'),
+      components: resolve(__dirname, 'src/components'),
+      constants: resolve(__dirname, 'src/constants'),
+      types: resolve(__dirname, 'src/types'),
+      utils: resolve(__dirname, 'src/utils'),
     },
   },
 });

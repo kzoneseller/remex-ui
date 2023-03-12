@@ -14,9 +14,9 @@
     "dev": "vite",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "prebuild": "rimraf -rf dist && rimraf -rf types",
+    "prebuild": "rimraf -rf dist && rimraf -rf types && -rf storybook-static",
     "build": "tsc && vite build",
-    "build-storybook": "storybook build",
+    "build:storybook": "storybook build",
     "types": "tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
   },
   "dependencies": {
