@@ -8,6 +8,7 @@ export * from './Menu';
 export * as Pagination from './Pagination';
 export * as Radio from './Radio';
 export * as SideNavigation from './SideNavigation';
+export * as Skeleton from './Skeleton';
 export * from './Table';
 export * as Tabs from './Tabs';
 export * as TextInput from './TextInput';
