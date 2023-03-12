@@ -2,7 +2,7 @@ import type { CSSObject } from '@emotion/react';
 import type { FC, ReactNode, SyntheticEvent } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { StyledTabs } from './tabs.styles';
+import { StyledTabs, TabsScroller } from './tabs.styles';
 
 interface TabsProps {
   value: number;
@@ -16,13 +16,14 @@ const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
 
   useEffect(() => {
     if (tabRef.current) {
-      [...tabRef.current.children].map((child, index) => {
+      const tabItems = tabRef.current.children[0].children;
+      [...tabItems].map((child, index) => {
         if (index === value) {
-          tabRef.current?.children.item(index)?.setAttribute?.('aria-selected', 'true');
-          tabRef.current?.children.item(index)?.classList.add('selected');
+          tabItems.item(index)?.setAttribute?.('aria-selected', 'true');
+          tabItems.item(index)?.classList.add('selected');
         } else {
-          tabRef.current?.children.item(index)?.setAttribute?.('aria-selected', 'false');
-          tabRef.current?.children.item(index)?.classList.remove('selected');
+          tabItems.item(index)?.setAttribute?.('aria-selected', 'false');
+          tabItems.item(index)?.classList.remove('selected');
         }
       });
     }
@@ -35,7 +36,7 @@ const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
       role="tablist"
       onClick={e => onChange(e, Number((e.target as Element).getAttribute('data-index')))}
     >
-      {children}
+      <TabsScroller>{children}</TabsScroller>
     </StyledTabs>
   );
 };

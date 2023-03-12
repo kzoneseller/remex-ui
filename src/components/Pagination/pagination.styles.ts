@@ -1,9 +1,21 @@
 import styled from '@emotion/styled';
 
 export const StyledPagination = styled.div`
+  overflow: hidden;
   display: inline-flex;
+  align-items: flex-end;
+  user-select: none;
+`;
+
+export const PaginationScroller = styled.div`
+  overflow-x: scroll;
+  margin-bottom: 0;
+  position: relative;
+  display: flex;
   gap: 12px;
-  align-items: center;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  width: 100%;
 `;
 
 export const StyledPaginationItem = styled.div<{ active: boolean }>`

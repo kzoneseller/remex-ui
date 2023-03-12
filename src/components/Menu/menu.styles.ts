@@ -22,6 +22,7 @@ export const StyledMenuItem = styled.li`
   align-items: center;
   padding: 14px 16px;
   gap: 8px;
+  cursor: pointer;
 
   svg {
     color: ${({ theme: { colors } }) => colors.textGrey};

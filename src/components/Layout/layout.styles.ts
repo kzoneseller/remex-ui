@@ -1,31 +1,39 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const StyledLayout = styled.div`
-  display: grid;
-  width: 100%;
-  overflow: hidden;
-  height: 100dvh;
+export const StyledLayout = styled.div<{ hasSideNavigation: boolean }>`
+  display: flex;
 
-  @media (min-width: 1024px) {
-    grid-auto-columns: max-content auto;
-  }
+  ${({ hasSideNavigation }) =>
+    hasSideNavigation &&
+    css`
+      & > header {
+        svg {
+          display: block;
+        }
+
+        @media (min-width: 1024px) {
+          width: calc(100% - 260px);
+
+          svg {
+            display: none;
+          }
+        }
+      }
+
+      & > main {
+        @media (min-width: 1024px) {
+          width: calc(100vw - 260px);
+          margin-left: auto;
+          flex-grow: 0;
+        }
+      }
+    `};
 `;
 
-export const Contents = styled.div`
-  grid-row-start: 1;
-  overflow-y: auto;
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  scroll-behavior: smooth;
+export const Main = styled.main`
+  -webkit-box-flex: 1;
+  flex-grow: 1;
   background-color: ${({ theme }) => theme.colors.bgBlue};
-
-  @media (min-width: 1024px) {
-    grid-column-start: 2;
-    height: auto;
-  }
-`;
-
-export const Main = styled.div`
-  padding: 2rem 1.5rem 4rem;
+  padding: 142px 24px 64px;
 `;
