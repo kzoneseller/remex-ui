@@ -5,6 +5,7 @@ export * from './Divider';
 export * as Header from './Header';
 export * as Layout from './Layout';
 export * from './Menu';
+export * as Modal from './Modal';
 export * as Pagination from './Pagination';
 export * as Radio from './Radio';
 export * as SideNavigation from './SideNavigation';
