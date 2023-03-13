@@ -25,7 +25,8 @@
     "@tabler/icons-react": "^2.8.0",
     "emotion-normalize": "^11.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-tooltip": "^5.10.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.61",

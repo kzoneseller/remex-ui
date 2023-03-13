@@ -13,4 +13,5 @@ export * as Skeleton from './Skeleton';
 export * from './Table';
 export * as Tabs from './Tabs';
 export * as TextInput from './TextInput';
+export * as Tooltip from './Tooltip';
 export * from '@tabler/icons-react';

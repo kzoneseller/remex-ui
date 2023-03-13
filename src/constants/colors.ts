@@ -19,6 +19,7 @@ const lightColors = {
   darkGray: '#5C5C5C',
   ghostGray: '#F5F6F8',
   textGrey: '#9C9C9C',
+  borderGrey: '#D9D8D6',
   /* common */
   white,
   bgBlue: '#F9FAFB',
