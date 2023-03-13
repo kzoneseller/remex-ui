@@ -73,7 +73,7 @@ export const StyledTableHeadData = styled.th`
   ${BaseTableData};
 
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.line};
-  color: ${({ theme: { colors } }) => colors.mainblack};
+  color: ${({ theme: { colors } }) => colors.mainBlack};
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -85,7 +85,7 @@ export const StyledTableData = styled.td`
   ${BaseTableData};
 
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.line};
-  color: ${({ theme: { colors } }) => colors.mainblack};
+  color: ${({ theme: { colors } }) => colors.mainBlack};
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;

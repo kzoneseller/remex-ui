@@ -7,7 +7,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   ${normalize};
 
   @font-face {
-    font-family: 'Min Sans';
+    font-family: Min Sans;
     src: url(https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minsans-dynamic-subset.css);
   }
 
@@ -59,7 +59,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: 'Min Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    font-family: Min Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
   }
@@ -76,7 +76,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   button,
   input,
   textarea {
-    font-family: 'Min Sans', Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
+    font-family: Min Sans, Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
     font-size: 12px;
     line-height: 18px;
     -webkit-appearance: none;
@@ -286,5 +286,21 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
 
   input[type='search']::-webkit-search-cancel-button {
     -webkit-appearance: none;
+  }
+
+  .react-select-container {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.004em;
+  }
+
+  .react-select-container > div:first-of-type {
+    border: 1px solid var(--mainGrey);
+    color: var(--darkGrey);
+  }
+
+  #react-select-3-placeholder {
+    color: var(--mainGrey);
   }
 `;
