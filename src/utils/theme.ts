@@ -1,4 +1,3 @@
-import { useTheme as EmotionUseTheme } from '@emotion/react';
 import { darkColors, lightColors } from 'constants/colors';
 import { keyframes } from 'constants/keyframes';
 
@@ -16,6 +15,4 @@ const darkTheme = {
   colors: darkColors,
 };
 
-const useTheme = EmotionUseTheme;
-
-export { darkTheme, lightTheme, useTheme };
+export { darkTheme, lightTheme };

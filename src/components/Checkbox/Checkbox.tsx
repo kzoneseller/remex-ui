@@ -1,6 +1,6 @@
 import type { CSSObject } from '@emotion/react';
+import { useTheme } from '@emotion/react';
 import type { FC, InputHTMLAttributes } from 'react';
-import { useTheme } from 'utils/theme';
 
 import { StyledCheckbox } from './checkbox.styles';
 

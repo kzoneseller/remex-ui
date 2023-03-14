@@ -3,18 +3,24 @@
   "private": false,
   "version": "0.0.0",
   "author": "remex dev@kzoneseller.com",
+  "type": "module",
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
-  "main": "./dist/remex-ui.umd.js",
-  "module": "./dist/remex-ui.es.js",
-  "types": "./types/main.d.ts",
+  "main": "./dist/remex-ui.umd.cjs",
+  "module": "./dist/remex-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/remex-ui.js",
+      "require": "./dist/remex-ui.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "prebuild": "rimraf -rf dist && rimraf -rf types && -rf storybook-static",
+    "prebuild": "rimraf -rf dist && rimraf -rf storybook-static",
     "build": "tsc && vite build",
     "build:storybook": "storybook build",
     "types": "tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
@@ -59,7 +65,22 @@
     "storybook": "^7.0.0-beta.61",
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
-    "vite-plugin-dts": "^2.0.2",
+    "vite-plugin-dts": "^2.1.0",
     "vite-plugin-svgr": "^2.4.0"
+  },
+  "engines": {
+    "node": ">=16.0.0 <19"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "**/*.ts?(x)": [
+      "bash -c tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
+    ],
+    "*.json": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }

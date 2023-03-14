@@ -13,24 +13,26 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "declarationMap": true,
-    "declarationDir": "./types",
+    "noEmit": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "types": ["vite-plugin-svgr/client", "@emotion/react/types/css-prop"],
     "baseUrl": ".",
     "paths": {
+      "assets": ["src/assets"],
       "assets/*": ["src/assets/*"],
+      "components": ["src/components"],
       "components/*": ["src/components/*"],
+      "constants": ["src/constants"],
       "constants/*": ["src/constants/*"],
+      "types": ["src/types"],
       "types/*": ["src/types/*"],
+      "utils": ["src/utils"],
       "utils/*": ["src/utils/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "types", "**/*.stories.*"],
+  "exclude": ["node_modules", "dist", "**/*.stories.*"],
   "references": [
     {
       "path": "./tsconfig.node.json"
