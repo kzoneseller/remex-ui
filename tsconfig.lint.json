@@ -17,7 +17,19 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "types": ["vite-plugin-svgr/client", "@emotion/react/types/css-prop"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "assets": ["src/assets"],
+      "assets/*": ["src/assets/*"],
+      "components": ["src/components"],
+      "components/*": ["src/components/*"],
+      "constants": ["src/constants"],
+      "constants/*": ["src/constants/*"],
+      "types": ["src/types"],
+      "types/*": ["src/types/*"],
+      "utils": ["src/utils"],
+      "utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src", ".storybook/*"],
   "exclude": ["node_modules", "dist", "**/*.stories.*"],

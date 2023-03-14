@@ -1,7 +1,7 @@
 import '@emotion/react';
 
-import { lightColors as colors } from 'constants/colors';
-import { keyframes } from 'constants/keyframes';
+import { lightColors as colors } from '../constants/colors';
+import { keyframes } from '../constants/keyframes';
 
 declare module '@emotion/react' {
   export interface Theme {

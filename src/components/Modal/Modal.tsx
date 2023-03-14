@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useLayoutEffect } from 'react';
-import { disableScroll, enableScroll } from 'utils/scroll';
 
+import { disableScroll, enableScroll } from '../../utils/scroll';
 import { Backdrop, Contents, StyledModal } from './modal.styles';
 
 interface ModalProps {

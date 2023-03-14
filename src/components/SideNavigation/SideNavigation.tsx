@@ -1,9 +1,9 @@
 import type { CSSObject } from '@emotion/react';
-import { Logo } from 'assets/svg';
 import type { FC, PropsWithChildren } from 'react';
 import { useLayoutEffect } from 'react';
-import { disableScroll, enableScroll } from 'utils/scroll';
 
+import { Logo } from '../../assets/svg';
+import { disableScroll, enableScroll } from '../../utils/scroll';
 import { BackDrop, Contents, Inner, LogoBox, StyledSideNavigation } from './sideNavigation.styles';
 
 interface SideNavigationProps {

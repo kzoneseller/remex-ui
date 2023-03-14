@@ -30,12 +30,15 @@ export default defineConfig({
     dts(),
   ],
   resolve: {
-    alias: {
-      assets: resolve(__dirname, 'src/assets'),
-      components: resolve(__dirname, 'src/components'),
-      constants: resolve(__dirname, 'src/constants'),
-      types: resolve(__dirname, 'src/types'),
-      utils: resolve(__dirname, 'src/utils'),
-    },
+    alias: [
+      { find: 'assets', replacement: resolve(__dirname, 'src/assets') },
+      {
+        find: 'components',
+        replacement: resolve(__dirname, 'src/components'),
+      },
+      { find: 'constants', replacement: resolve(__dirname, 'src/constants') },
+      { find: 'types', replacement: resolve(__dirname, 'src/types') },
+      { find: 'utils', replacement: resolve(__dirname, 'src/utils') },
+    ],
   },
 });
