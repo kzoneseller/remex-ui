@@ -1,7 +1,7 @@
 {
   "name": "remex-ui",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "remex dev@kzoneseller.com",
   "type": "module",
   "files": [
