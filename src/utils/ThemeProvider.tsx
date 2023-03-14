@@ -19,4 +19,4 @@ const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, th
   );
 };
 
-export default ThemeProvider;
+export { ThemeProvider };
