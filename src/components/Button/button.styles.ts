@@ -1,9 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
+import type { Colors } from '../../constants/colors';
+
 export const StyledButton = styled.button<{
   variant: 'contained' | 'outlined' | 'ghost';
-  color: string;
+  color: Colors;
   size: 'small' | 'medium' | 'large';
   fullWidth: boolean;
 }>`
@@ -29,7 +31,11 @@ export const StyledButton = styled.button<{
     box-shadow: none;
   }
 
-  ${({ variant, color, theme: { colors } }) => VARIANT[variant]({ color: color, backgroundColor: colors.white })};
+  ${({ variant, color, theme: { colors } }) =>
+    VARIANT[variant]({
+      color: colors[color],
+      backgroundColor: colors.white,
+    })};
 
   ${({ size }) => SIZE[size]};
 `;

@@ -1,7 +1,7 @@
 import type { CSSObject } from '@emotion/react';
-import { useTheme } from '@emotion/react';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
+import { Colors } from '../../constants/colors';
 import { StyledButton } from './button.styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   customStyle?: CSSObject;
 }
 
-const Button: FC<PropsWithChildren<ButtonProps>> = ({
+const Button = ({
   variant = 'contained',
   color = 'blue',
   size = 'medium',
@@ -20,14 +20,12 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   customStyle,
   children,
   ...props
-}) => {
-  const { colors } = useTheme();
-
-  const COLORS = {
-    blue: colors.mainBlue,
-    black: colors.mainBlack,
-    grey: colors.mainGrey,
-    red: colors.error,
+}: PropsWithChildren<ButtonProps>) => {
+  const COLORS: Record<'blue' | 'black' | 'grey' | 'red', Colors> = {
+    blue: 'mainBlue',
+    black: 'mainBlack',
+    grey: 'mainGrey',
+    red: 'error',
   };
 
   return (

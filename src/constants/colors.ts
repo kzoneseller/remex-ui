@@ -33,4 +33,6 @@ const darkColors = {
   ...lightColors,
 };
 
+export type Colors = keyof typeof lightColors;
+
 export { darkColors, lightColors };
