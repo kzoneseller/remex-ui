@@ -23,6 +23,12 @@ export const StyledMenuItem = styled.li`
   padding: 14px 16px;
   gap: 8px;
   cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease 0s;
+
+  :hover {
+    background-color: ${({ theme: { colors } }) => colors.line};
+  }
 
   svg {
     color: ${({ theme: { colors } }) => colors.textGrey};

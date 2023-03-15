@@ -4,7 +4,7 @@ import type { CustomStyle } from 'utils/theme';
 import { Label, StyledMenuItem } from './menu.styles';
 
 interface MenuItemProps {
-  icon: ReactNode;
+  icon?: ReactNode;
   customStyle?: CustomStyle;
 }
 
