@@ -15,4 +15,3 @@ export * from './Table';
 export * from './Tabs';
 export { default as TextInput } from './TextInput';
 export { default as Tooltip } from './Tooltip';
-export * from '@tabler/icons-react';

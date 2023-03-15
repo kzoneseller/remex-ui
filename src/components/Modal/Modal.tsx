@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { disableScroll, enableScroll } from 'utils/scroll';
 
 import { Backdrop, Contents, StyledModal } from './modal.styles';
@@ -10,7 +10,7 @@ interface ModalProps {
 }
 
 const Modal: FC<PropsWithChildren<ModalProps>> = ({ open = false, onClose, children }) => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (open) {
       disableScroll();
     } else {

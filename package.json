@@ -15,9 +15,8 @@
   "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf -rf dist",
-    "build:dev": "rollup -c rollup.config.dev.js --watch",
-    "build:types": "tsc --noEmit --incremental false --pretty",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:dev": "rollup -c rollup.config.dev.js --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
