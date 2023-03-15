@@ -1,11 +1,11 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Label, StyledMenuItem } from './menu.styles';
 
 interface MenuItemProps {
   icon: ReactNode;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const MenuItem: FC<PropsWithChildren<MenuItemProps>> = ({ icon, children, customStyle }) => {

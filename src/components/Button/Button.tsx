@@ -1,6 +1,6 @@
-import type { CSSObject } from '@emotion/react';
 import { useTheme } from '@emotion/react';
 import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledButton } from './button.styles';
 
@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: 'blue' | 'black' | 'grey' | 'red';
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({

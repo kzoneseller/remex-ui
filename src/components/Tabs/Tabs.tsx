@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { CSSObject } from '@emotion/react';
 import type { FC, ReactNode, SyntheticEvent } from 'react';
 import { Children, useEffect, useRef } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTabs, TabsScroller } from './tabs.styles';
 
@@ -9,7 +9,7 @@ interface TabsProps {
   value: number;
   onChange: (e: SyntheticEvent, newValue: number) => void;
   children: ReactNode;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {

@@ -1,12 +1,12 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Main, StyledLayout } from './layout.styles';
 
 interface LayoutProps {
   header?: ReactNode;
   sideNavigation?: ReactNode;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, header, sideNavigation, customStyle }) => {

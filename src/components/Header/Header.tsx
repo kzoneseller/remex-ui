@@ -1,15 +1,15 @@
-import type { CSSObject } from '@emotion/react';
 import { useTheme } from '@emotion/react';
 import { IconChevronDown, IconUserCircle } from '@tabler/icons-react';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { useState } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Contents, Info, NickName, StyledHeader, Title, Wrapper } from './header.styles';
 
 interface HeaderProps {
   title: ReactNode;
   userName?: string;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
   onClick?: () => void;
 }
 

@@ -1,6 +1,6 @@
-import type { CSSObject } from '@emotion/react';
 import type { InputHTMLAttributes, ReactElement } from 'react';
 import { forwardRef } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { InnerInput, Input, Label, StyledTextInput } from './textInput.styles';
 
@@ -8,7 +8,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   fullWidth?: boolean;
   labelText: string;
   startIcon?: ReactElement;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const TextInput = forwardRef<HTMLDivElement, TextInputProps>(

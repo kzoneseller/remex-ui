@@ -1,10 +1,10 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTableRow } from './table.styles';
 
 interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const TableRow: FC<PropsWithChildren<TableRowProps>> = ({ children, customStyle, ...props }) => {

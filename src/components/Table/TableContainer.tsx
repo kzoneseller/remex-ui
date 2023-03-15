@@ -1,11 +1,11 @@
-import type { CSSObject } from '@emotion/react';
 import type { HTMLAttributes, PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTableContainer } from './table.styles';
 
 interface TableContainerProps extends HTMLAttributes<HTMLDivElement> {
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const TableContainer = forwardRef<HTMLDivElement, PropsWithChildren<TableContainerProps>>(

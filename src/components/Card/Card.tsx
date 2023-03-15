@@ -1,6 +1,6 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, ReactNode } from 'react';
 import { useMemo } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Actions, Body, InnerBorder, StyledCard, Title } from './card.styles';
 
@@ -8,7 +8,7 @@ interface CardProps {
   title?: string;
   actions?: ReactNode;
   showBorder?: boolean;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
   children?: ReactNode;
 }
 

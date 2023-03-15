@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { Keyframes } from '@emotion/react';
+import type { CSSObject, Keyframes, SerializedStyles } from '@emotion/react';
 import { Global, ThemeProvider as EmotionThemeProvider, useTheme as EmotionUseTheme } from '@emotion/react';
 import type { ColorKeys, ColorValues } from 'constants/colors';
 import { darkColors, lightColors } from 'constants/colors';
@@ -17,6 +17,8 @@ export interface CustomTheme {
   colors: Record<ColorKeys, ColorValues>;
   keyframes: Record<KeyframeKeys, Keyframes>;
 }
+
+export type CustomStyle = CSSObject | SerializedStyles;
 
 const defaultTheme = {
   keyframes,

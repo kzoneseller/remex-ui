@@ -1,6 +1,6 @@
-import type { CSSObject } from '@emotion/react';
 import { IconChevronLeft, IconChevronRight, IconChevronsLeft, IconChevronsRight } from '@tabler/icons-react';
 import type { FC, SyntheticEvent } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Icon, PaginationScroller, StyledPagination, StyledPaginationItem } from './pagination.styles';
 
@@ -12,7 +12,7 @@ interface PaginationProps {
   showPrevButton?: boolean;
   showLastButton?: boolean;
   showNextButton?: boolean;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Pagination: FC<PaginationProps> = ({
