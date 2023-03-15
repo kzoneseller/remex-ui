@@ -29,7 +29,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["**/*.ts", "**/*.tsx", "global.d.ts"],
   "exclude": ["node_modules", "example", "dist"]

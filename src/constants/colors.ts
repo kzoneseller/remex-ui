@@ -2,7 +2,7 @@ const white = '#ffffff';
 const black = '#000000';
 const error = '#EF4E3A';
 
-const lightColors = {
+export const lightColors = {
   /* blue */
   mainBlue: '#002F87',
   lightBlue: '#005CB9',
@@ -27,10 +27,12 @@ const lightColors = {
   border: '#E0DFF0',
   line: '#F6F7FB',
   error,
-};
+} as const;
 
-const darkColors = {
+export const darkColors = {
   ...lightColors,
-};
+} as const;
 
-export { darkColors, lightColors };
+export type ColorKeys = keyof typeof lightColors;
+
+export type ColorValues = (typeof lightColors)[ColorKeys];

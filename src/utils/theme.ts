@@ -5,14 +5,12 @@ const defaultTheme = {
   keyframes,
 };
 
-const lightTheme = {
+export const lightTheme = {
   ...defaultTheme,
   colors: lightColors,
 };
 
-const darkTheme = {
+export const darkTheme = {
   ...defaultTheme,
   colors: darkColors,
 };
-
-export { darkTheme, lightTheme };

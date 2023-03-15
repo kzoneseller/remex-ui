@@ -7,9 +7,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     jsx: true,
     useJSXTextNode: true,
   },
@@ -21,9 +19,7 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint', 'import', 'prettier', 'react', 'react-hooks', 'simple-import-sort'],
   settings: {
-    react: {
-      version: 'detect',
-    },
+    react: { version: 'detect' },
   },
   rules: {
     'prettier/prettier': 'error',
@@ -65,32 +61,13 @@ module.exports = {
         selector: 'variable',
         leadingUnderscore: 'allow',
       },
-      {
-        format: ['camelCase', 'PascalCase'],
-        selector: 'function',
-      },
-      {
-        format: ['PascalCase'],
-        selector: 'interface',
-      },
-      {
-        format: ['PascalCase'],
-        selector: 'typeAlias',
-      },
+      { format: ['camelCase', 'PascalCase'], selector: 'function' },
+      { format: ['PascalCase'], selector: 'interface' },
+      { format: ['PascalCase'], selector: 'typeAlias' },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/array-type': [
-      'error',
-      {
-        default: 'array-simple',
-      },
-    ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        ignoreRestSiblings: true,
-      },
-    ],
+    '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
+    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
     '@typescript-eslint/member-ordering': [
       'error',
       {
@@ -116,13 +93,7 @@ module.exports = {
     'prefer-const': 'error',
     'no-var': 'error',
     curly: ['error', 'all'],
-    eqeqeq: [
-      'error',
-      'always',
-      {
-        null: 'ignore',
-      },
-    ],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
     'import/no-duplicates': 'error',
     'react/prop-types': 'off',
     'react/display-name': 'off',
@@ -131,12 +102,7 @@ module.exports = {
     'react/jsx-no-target-blank': 'error',
     '@typescript-eslint/no-var-requires': 'warn',
     'react/react-in-jsx-scope': 'off',
-    'react/no-unknown-property': [
-      'error',
-      {
-        ignore: ['css'],
-      },
-    ],
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
