@@ -8,7 +8,7 @@ interface ThemeProviderProps {
   themeMode?: 'light' | 'dark';
 }
 
-const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, themeMode = 'light' }) => {
+export const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, themeMode = 'light' }) => {
   const theme = themeMode === 'dark' ? darkTheme : lightTheme;
 
   return (
@@ -18,5 +18,3 @@ const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, th
     </EmotionThemeProvider>
   );
 };
-
-export default ThemeProvider;
