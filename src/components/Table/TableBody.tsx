@@ -1,10 +1,10 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, PropsWithChildren } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTableBody } from './table.styles';
 
 interface TableBodyProps {
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const TableBody: FC<PropsWithChildren<TableBodyProps>> = ({ children, customStyle, ...props }) => {

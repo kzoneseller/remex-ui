@@ -10,6 +10,7 @@ import type {
   WrapperType,
 } from 'react-tooltip';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTooltip } from './tooltip.styles';
 
@@ -43,11 +44,12 @@ interface TooltipProps {
   setIsOpen?: (value: boolean) => void;
   afterShow?: () => void;
   afterHide?: () => void;
+  customStyle?: CustomStyle;
 }
 
-const Tooltip: FC<TooltipProps> = ({ children, ...props }) => {
+const Tooltip: FC<TooltipProps> = ({ children, customStyle, ...props }) => {
   return (
-    <StyledTooltip>
+    <StyledTooltip css={customStyle}>
       <>
         {children}
         <ReactTooltip noArrow variant="light" {...props} />

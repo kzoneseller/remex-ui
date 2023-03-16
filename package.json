@@ -1,86 +1,76 @@
 {
   "name": "remex-ui",
-  "private": false,
-  "version": "0.0.0",
-  "author": "remex dev@kzoneseller.com",
-  "type": "module",
+  "version": "0.0.1",
+  "description": "Remex React UI Components",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "main": "./dist/remex-ui.umd.cjs",
-  "module": "./dist/remex-ui.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/remex-ui.js",
-      "require": "./dist/remex-ui.umd.cjs"
-    }
-  },
+  "repository": "https://github.com/kzoneseller/remex-ui",
+  "author": "remex dev@kzoneseller.com",
+  "license": "MIT",
+  "private": false,
+  "sideEffects": false,
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "prebuild": "rimraf -rf dist && rimraf -rf storybook-static",
-    "build": "tsc && vite build",
-    "build:storybook": "storybook build",
-    "types": "tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@tabler/icons-react": "^2.8.0",
-    "emotion-normalize": "^11.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-select": "^5.7.0",
-    "react-tooltip": "^5.10.0"
+    "prebuild": "rimraf -rf dist",
+    "build": "rollup -c",
+    "build:dev": "rollup -c rollup.config.dev.js --watch"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-beta.61",
-    "@storybook/addon-interactions": "^7.0.0-beta.61",
-    "@storybook/addon-links": "^7.0.0-beta.61",
-    "@storybook/addon-mdx-gfm": "^7.0.0-beta.61",
-    "@storybook/blocks": "^7.0.0-alpha.8",
-    "@storybook/react": "^7.0.0-beta.61",
-    "@storybook/react-vite": "^7.0.0-beta.61",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "@types/node": "^18.14.6",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "@vitejs/plugin-react-swc": "^3.2.0",
-    "eslint": "^7.6.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@emotion/babel-plugin": "^11.9.2",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@svgr/rollup": "^6.2.1",
+    "@svgr/webpack": "^5.5.0",
+    "@tabler/icons-react": "^2.10.0",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "babel-loader": "^9.1.0",
+    "babel-preset-react-app": "^10.0.1",
+    "emotion-normalize": "^11.0.1",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.1.2",
-    "prettier": "^2.8.4",
-    "prop-types": "^15.8.1",
-    "rimraf": "^4.3.1",
-    "storybook": "^7.0.0-beta.61",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4",
-    "vite-plugin-dts": "^2.1.0",
-    "vite-plugin-svgr": "^2.4.0"
+    "eslint-plugin-storybook": "^0.6.10",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0",
+    "react-select": "^5.7.0",
+    "react-tooltip": "^5.10.0",
+    "rimraf": "^4.1.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "tslib": "^2.3.1",
+    "typescript": "4.6.3"
   },
-  "engines": {
-    "node": ">=16.0.0 <19"
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
-    ],
-    "**/*.ts?(x)": [
-      "bash -c tsc --project tsconfig.lint.json --noEmit --incremental false --pretty"
-    ],
-    "*.json": [
-      "prettier --write --ignore-unknown"
-    ]
+  "peerDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "emotion-normalize": "^11.0.1",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-select": "^5.7.0",
+    "react-tooltip": "^5.10.0"
   }
 }

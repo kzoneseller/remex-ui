@@ -1,6 +1,6 @@
-import { CSSObject } from '@emotion/styled';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { SkeletonInner, SkeletonWrapper, StyledSkeleton } from './skeleton.styles';
 
@@ -16,7 +16,7 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   animation?: 'pulse' | 'wave';
   disableAspectRatio?: boolean;
   disableAnimation?: boolean;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(

@@ -1,6 +1,7 @@
-import type { CSSObject } from '@emotion/react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { FC, ReactNode, SyntheticEvent } from 'react';
-import { useEffect, useRef } from 'react';
+import { Children, useEffect, useRef } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTabs, TabsScroller } from './tabs.styles';
 
@@ -8,7 +9,7 @@ interface TabsProps {
   value: number;
   onChange: (e: SyntheticEvent, newValue: number) => void;
   children: ReactNode;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
@@ -17,7 +18,9 @@ const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
   useEffect(() => {
     if (tabRef.current) {
       const tabItems = tabRef.current.children[0].children;
-      [...tabItems].map((child, index) => {
+
+      // @ts-ignore
+      Children(tabItems, (child, index) => {
         if (index === value) {
           tabItems.item(index)?.setAttribute?.('aria-selected', 'true');
           tabItems.item(index)?.classList.add('selected');

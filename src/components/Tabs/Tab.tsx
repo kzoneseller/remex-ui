@@ -1,12 +1,12 @@
-import type { CSSObject } from '@emotion/react';
 import type { FC, ReactNode } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledTab } from './tabs.styles';
 
 interface TabProps {
   index: number;
   label: ReactNode;
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Tab: FC<TabProps> = ({ index, label, customStyle }) => {

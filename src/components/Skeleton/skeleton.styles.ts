@@ -1,4 +1,4 @@
-import styled, { CSSObject } from '@emotion/styled';
+import styled from '@emotion/styled';
 
 import type { SkeletonProps } from './Skeleton';
 
@@ -6,7 +6,7 @@ export const SkeletonWrapper = styled.div<Pick<SkeletonProps, 'ratio' | 'round'>
   position: relative;
   overflow: hidden;
 
-  ${({ ratio }): CSSObject => {
+  ${({ ratio }) => {
     const splitRatio = String(ratio).split(':');
 
     return {

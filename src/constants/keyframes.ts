@@ -44,4 +44,6 @@ export const keyframes = {
   pulse,
   wave,
   checkmark,
-};
+} as const;
+
+export type KeyframeKeys = keyof typeof keyframes;

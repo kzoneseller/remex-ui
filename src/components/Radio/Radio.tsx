@@ -1,12 +1,12 @@
-import type { CSSObject } from '@emotion/react';
 import { useTheme } from '@emotion/react';
 import type { FC, InputHTMLAttributes } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { StyledRadio } from './radio.styles';
 
 interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   color?: 'blue' | 'black' | 'grey' | 'red';
-  customStyle?: CSSObject;
+  customStyle?: CustomStyle;
 }
 
 const Radio: FC<RadioProps> = ({ color = 'blue', customStyle, ...props }) => {

@@ -1,16 +1,16 @@
-import type { CSSObject } from '@emotion/react';
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { FC, LiHTMLAttributes, PropsWithChildren, ReactNode } from 'react';
+import type { CustomStyle } from 'utils/theme';
 
 import { Label, StyledMenuItem } from './menu.styles';
 
-interface MenuItemProps {
-  icon: ReactNode;
-  customStyle?: CSSObject;
+interface MenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
+  icon?: ReactNode;
+  customStyle?: CustomStyle;
 }
 
-const MenuItem: FC<PropsWithChildren<MenuItemProps>> = ({ icon, children, customStyle }) => {
+const MenuItem: FC<PropsWithChildren<MenuItemProps>> = ({ icon, children, customStyle, ...props }) => {
   return (
-    <StyledMenuItem css={customStyle}>
+    <StyledMenuItem css={customStyle} {...props}>
       {icon}
       <Label>{children}</Label>
     </StyledMenuItem>

@@ -1,3 +1,3 @@
 export * from './components';
-export * from './utils/theme';
-export { default as ThemeProvider } from './utils/ThemeProvider';
+export type { CustomStyle, CustomTheme } from 'utils/theme';
+export { darkTheme, lightTheme, ThemeProvider, useTheme } from 'utils/theme';
