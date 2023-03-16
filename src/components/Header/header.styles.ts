@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const Wrapper = styled.div`
-  height: 110px;
+  height: 104px;
   width: 100%;
   display: flex;
   align-items: center;

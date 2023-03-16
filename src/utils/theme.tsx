@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { CSSObject, Keyframes, SerializedStyles } from '@emotion/react';
+import type { CSSObject, Keyframes, SerializedStyles, Theme } from '@emotion/react';
 import { Global, ThemeProvider as EmotionThemeProvider, useTheme as EmotionUseTheme } from '@emotion/react';
 import type { ColorKeys, ColorValues } from 'constants/colors';
 import { darkColors, lightColors } from 'constants/colors';
@@ -9,7 +9,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { getGlobalStyles } from './globalStyles';
 
-interface ThemeProviderProps {
+export interface ThemeProviderProps {
   themeMode?: 'light' | 'dark';
 }
 
@@ -46,4 +46,6 @@ export const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ child
   );
 };
 
-export const useTheme = () => EmotionUseTheme() as unknown as CustomTheme;
+interface CustomUseTheme extends CustomTheme, Theme {}
+
+export const useTheme = (): CustomUseTheme => EmotionUseTheme();
