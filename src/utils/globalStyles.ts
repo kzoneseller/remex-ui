@@ -8,7 +8,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
 
   @font-face {
     font-family: Min Sans;
-    src: url(https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minsans-dynamic-subset.css);
+    src: url(https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minSans.css);
   }
 
   h1,

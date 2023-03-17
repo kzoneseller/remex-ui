@@ -1,6 +1,6 @@
 {
   "name": "remex-ui",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Remex React UI Components",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
@@ -16,7 +16,8 @@
   "scripts": {
     "prebuild": "rimraf -rf dist",
     "build": "rollup -c",
-    "build:dev": "rollup -c rollup.config.dev.js --watch"
+    "build:dev": "rollup -c rollup.config.dev.js --watch",
+    "types": "tsc --noEmit --incremental false --pretty"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

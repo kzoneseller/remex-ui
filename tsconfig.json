@@ -28,5 +28,5 @@
     "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["**/*.ts", "**/*.tsx", "global.d.ts"],
-  "exclude": ["node_modules", "example", "dist"]
+  "exclude": ["node_modules", "dist"]
 }

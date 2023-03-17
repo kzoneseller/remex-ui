@@ -11,7 +11,7 @@ interface MenuProp extends Omit<HTMLAttributes<HTMLUListElement>, 'title'> {
 const Menu: FC<PropsWithChildren<MenuProp>> = ({ title, children, customStyle, ...props }) => {
   return (
     <StyledMenu css={customStyle} {...props}>
-      {typeof title === 'string' ? <MenuTitle>{title}</MenuTitle> : title}
+      <MenuTitle>{title}</MenuTitle>
       {children}
     </StyledMenu>
   );
