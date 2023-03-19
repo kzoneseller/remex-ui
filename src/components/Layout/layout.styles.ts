@@ -9,14 +9,14 @@ export const StyledLayout = styled.div<{ hasSideNavigation: boolean }>`
     css`
       & > header {
         svg {
-          display: block;
+          display: none;
         }
 
         @media (min-width: 1024px) {
           width: calc(100% - 260px);
 
           svg {
-            display: none;
+            display: block;
           }
         }
       }
