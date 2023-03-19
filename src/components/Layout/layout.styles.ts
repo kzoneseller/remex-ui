@@ -8,15 +8,15 @@ export const StyledLayout = styled.div<{ hasSideNavigation: boolean }>`
     hasSideNavigation &&
     css`
       & > header {
-        svg {
-          display: none;
+        #sideMenu {
+          display: block;
         }
 
         @media (min-width: 1024px) {
           width: calc(100% - 260px);
 
-          svg {
-            display: block;
+          #sideMenu {
+            display: none;
           }
         }
       }
