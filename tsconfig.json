@@ -27,6 +27,6 @@
     "noEmit": true,
     "types": ["@emotion/react/types/css-prop"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "global.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "global.d.ts", "**/*.otf"],
   "exclude": ["node_modules", "dist"]
 }

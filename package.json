@@ -14,8 +14,8 @@
   "private": false,
   "sideEffects": false,
   "scripts": {
-    "prebuild": "rimraf -rf dist",
-    "build": "rollup -c",
+    "clean": "rimraf -rf dist",
+    "build": "npm run clean && rollup -c",
     "build:dev": "rollup -c rollup.config.dev.js --watch",
     "types": "tsc --noEmit --incremental false --pretty"
   },
@@ -60,6 +60,7 @@
     "react-tooltip": "^5.10.0",
     "rimraf": "^4.1.2",
     "rollup": "^2.70.2",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "tslib": "^2.3.1",

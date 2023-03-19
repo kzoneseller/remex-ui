@@ -1,25 +1,75 @@
 import { css } from '@emotion/react';
+import fonts from 'constants/fonts';
 import normalize from 'emotion-normalize';
 
 import type { darkTheme, lightTheme } from './theme';
 
 export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => css`
   ${normalize};
+  ${fonts};
 
   @font-face {
     font-family: Min Sans;
-    src: url(https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minSans.css);
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Black.otf') format('opentype');
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 1em;
-    font-weight: normal;
-    margin: 0;
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-ExtraBold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Bold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-SemiBold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Medium.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Regular.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Light.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-ExtraLight.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Min Sans;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('../assets/fonts/MinSans-Thin.otf') format('opentype');
   }
 
   * {
@@ -90,16 +140,6 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
 
   abbr:where([title]) {
     text-decoration: underline dotted;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: inherit;
-    font-weight: inherit;
   }
 
   a {

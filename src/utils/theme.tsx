@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { CSSObject, Keyframes, SerializedStyles, Theme } from '@emotion/react';
-import { Global, ThemeProvider as EmotionThemeProvider, useTheme as EmotionUseTheme } from '@emotion/react';
+import type { CSSObject, Keyframes, SerializedStyles } from '@emotion/react';
+import { Global, ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import type { ColorKeys, ColorValues } from 'constants/colors';
 import { darkColors, lightColors } from 'constants/colors';
+import fonts, { FontsKeys, FontsValues } from 'constants/fonts';
 import type { KeyframeKeys } from 'constants/keyframes';
 import { keyframes } from 'constants/keyframes';
 import type { FC, PropsWithChildren } from 'react';
@@ -16,6 +17,7 @@ export interface ThemeProviderProps {
 export interface CustomTheme {
   colors: Record<ColorKeys, ColorValues>;
   keyframes: Record<KeyframeKeys, Keyframes>;
+  fonts: Record<FontsKeys, FontsValues>;
 }
 
 export type CustomStyle = CSSObject | SerializedStyles;
@@ -27,11 +29,13 @@ const defaultTheme = {
 export const lightTheme = {
   ...defaultTheme,
   colors: lightColors,
+  fonts,
 };
 
 export const darkTheme = {
   ...defaultTheme,
   colors: darkColors,
+  fonts,
 };
 
 export const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, themeMode = 'light' }) => {
@@ -45,7 +49,3 @@ export const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ child
     </EmotionThemeProvider>
   );
 };
-
-interface CustomUseTheme extends CustomTheme, Theme {}
-
-export const useTheme = (): CustomUseTheme => EmotionUseTheme();
