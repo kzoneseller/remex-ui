@@ -50,24 +50,3 @@ export const Contents = styled.div`
     cursor: pointer;
   }
 `;
-
-export const Info = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${({ theme: { colors } }) => colors.mainBlue};
-  cursor: pointer;
-  user-select: none;
-  gap: 2rem;
-
-  & > div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-`;
-
-export const NickName = styled.div`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 14px;
-`;

@@ -50,10 +50,9 @@ interface TooltipProps {
 const Tooltip: FC<TooltipProps> = ({ children, customStyle, ...props }) => {
   return (
     <StyledTooltip css={customStyle}>
-      <>
+      <ReactTooltip noArrow variant="light" {...props}>
         {children}
-        <ReactTooltip noArrow variant="light" {...props} />
-      </>
+      </ReactTooltip>
     </StyledTooltip>
   );
 };
