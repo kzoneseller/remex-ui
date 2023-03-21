@@ -14,7 +14,7 @@ const TableCell: FC<PropsWithChildren<TableCellProps>> = ({ component = 'td', cu
       {children}
     </StyledTableHeadData>
   ) : (
-    <StyledTableData>{children}</StyledTableData>
+    <StyledTableData css={customStyle}>{children}</StyledTableData>
   );
 };
 
