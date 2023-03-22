@@ -1,3 +1,4 @@
+export * from './assets/svg';
 export * from './components';
 export * from './constants/colors';
 export type { CustomStyle, CustomTheme } from './utils/theme';
