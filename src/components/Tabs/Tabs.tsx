@@ -19,8 +19,7 @@ const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
     if (tabRef.current) {
       const tabItems = tabRef.current.children[0].children;
 
-      // @ts-ignore
-      Children(tabItems, (child, index) => {
+      Children.map(tabItems, (child, index) => {
         if (index === value) {
           tabItems.item(index)?.setAttribute?.('aria-selected', 'true');
           tabItems.item(index)?.classList.add('selected');
