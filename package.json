@@ -57,7 +57,6 @@
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0",
     "react-select": "^5.7.0",
-    "react-tooltip": "^5.10.0",
     "rimraf": "^4.1.2",
     "rollup": "^2.70.2",
     "rollup-plugin-copy": "^3.4.0",
@@ -72,7 +71,6 @@
     "emotion-normalize": "^11.0.1",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-select": "^5.7.0",
-    "react-tooltip": "^5.10.0"
+    "react-select": "^5.7.0"
   }
 }

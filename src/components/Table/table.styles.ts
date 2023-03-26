@@ -46,14 +46,6 @@ export const StyledTableHead = styled.thead`
 
 export const StyledTableBody = styled.tbody`
   display: table-row-group;
-
-  th > span {
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 20px;
-    letter-spacing: 0.004em;
-    color: ${({ theme: { colors } }) => colors.textGrey};
-  }
 `;
 
 export const StyledTableRow = styled.tr`

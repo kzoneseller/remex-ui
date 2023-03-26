@@ -21,7 +21,7 @@ const DividerHorizontal = styled.div`
     content: '';
     flex-grow: 1;
     height: 100%;
-    width: 0.125rem;
+    width: 1px;
   }
 `;
 

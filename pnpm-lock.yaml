@@ -38,7 +38,6 @@ specifiers:
   react: ^16.8.0 || ^17.0.0
   react-dom: ^16.8.0 || ^17.0.0
   react-select: ^5.7.0
-  react-tooltip: ^5.10.0
   rimraf: ^4.1.2
   rollup: ^2.70.2
   rollup-plugin-copy: ^3.4.0
@@ -85,7 +84,6 @@ devDependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-select: 5.7.0_osjumu6i5wv2qmetn5rca62i6y
-  react-tooltip: 5.10.0_sfoxds7t5ydpegc3knd667wn6m
   rimraf: 4.4.0
   rollup: 2.79.1
   rollup-plugin-copy: 3.4.0
@@ -1611,12 +1609,6 @@ packages:
     resolution: {integrity: sha512-SQOeVbMwb1di+mVWWJLpsUTToKfqVNioXys011beCAhyOIFtS+GQoW4EQSneuxzmQKddExDwQ+X0hLl4lJJaSQ==}
     dev: true
 
-  /@floating-ui/dom/1.2.3:
-    resolution: {integrity: sha512-lK9cZUrHSJLMVAdCvDqs6Ug8gr0wmqksYiaoj/bxj2gweRQkSuhg2/V6Jswz2KiQ0RAULbqw1oQDJIMpQ5GfGA==}
-    dependencies:
-      '@floating-ui/core': 1.2.4
-    dev: true
-
   /@floating-ui/dom/1.2.4:
     resolution: {integrity: sha512-4+k+BLhtWj+peCU60gp0+rHeR8+Ohqx6kjJf/lHMnJ8JD5Qj6jytcq1+SZzRwD7rvHKRhR7TDiWWddrNrfwQLg==}
     dependencies:
@@ -2683,10 +2675,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: true
-
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: true
 
   /clean-stack/2.2.0:
@@ -4706,18 +4694,6 @@ packages:
       use-isomorphic-layout-effect: 1.1.2_jguntkfjozdfrzd4l22x7bdnx4
     transitivePeerDependencies:
       - '@types/react'
-    dev: true
-
-  /react-tooltip/5.10.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-9qhzkWJNBXf/ajD84e4eIMUgpZW/x+q0QaVjBcELImrH8UHcW1nlIEQOeKsgKgZfqT2vrQho2Dhfh0eALcjTJQ==}
-    peerDependencies:
-      react: '>=16.14.0'
-      react-dom: '>=16.14.0'
-    dependencies:
-      '@floating-ui/dom': 1.2.3
-      classnames: 2.3.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
     dev: true
 
   /react-transition-group/4.4.5_sfoxds7t5ydpegc3knd667wn6m:
