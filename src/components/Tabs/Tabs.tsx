@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { FC, ReactNode, SyntheticEvent } from 'react';
-import { Children, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { StyledTabs, TabsScroller } from './tabs.styles';
@@ -19,7 +19,7 @@ const Tabs: FC<TabsProps> = ({ value, onChange, children, customStyle }) => {
     if (tabRef.current) {
       const tabItems = tabRef.current.children[0].children;
 
-      Children.map(tabItems, (child, index) => {
+      Array.from({ length: tabItems.length }, (_, index) => {
         if (index === value) {
           tabItems.item(index)?.setAttribute?.('aria-selected', 'true');
           tabItems.item(index)?.classList.add('selected');
