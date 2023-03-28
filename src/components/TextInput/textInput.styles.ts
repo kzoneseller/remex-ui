@@ -34,12 +34,18 @@ export const InnerInput = styled.div<{ variant: 'filled' | 'outlined' | 'standar
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ fullWidth: boolean }>`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.004em;
   color: ${({ theme: { colors } }) => colors.mainBlack};
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `};
 
   :read-only {
     outline: 0;

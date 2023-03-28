@@ -5,23 +5,22 @@ import DividerStyle from './divider.styles';
 const DividerHorizontal = styled.div`
   ${DividerStyle};
 
-  margin: 0 1rem;
-  height: auto;
-  width: 1rem;
-  flex-direction: column;
+  height: 0;
+  flex-direction: row;
   color: ${({ theme: { colors } }) => colors.textGrey};
+  padding: 0 20px;
 
   :before,
   :after {
-    background-color: ${({ theme: { colors } }) => colors.border};
+    background-color: ${({ theme: { colors } }) => colors.textGrey};
   }
 
   :before,
   :after {
     content: '';
     flex-grow: 1;
-    height: 100%;
-    width: 1px;
+    height: 1px;
+    width: 100%;
   }
 `;
 

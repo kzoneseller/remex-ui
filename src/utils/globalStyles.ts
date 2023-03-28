@@ -325,7 +325,20 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   }
 
   input[type='search']::-webkit-search-cancel-button {
+    appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   .react-select-container {

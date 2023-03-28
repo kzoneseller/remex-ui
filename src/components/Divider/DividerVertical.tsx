@@ -5,10 +5,11 @@ import DividerStyle from './divider.styles';
 const DividerVertical = styled.div`
   ${DividerStyle};
 
-  height: 0;
-  flex-direction: row;
+  margin: 0 1rem;
+  height: auto;
+  width: 1rem;
+  flex-direction: column;
   color: ${({ theme: { colors } }) => colors.textGrey};
-  padding: 0 20px;
 
   :before,
   :after {
@@ -19,8 +20,8 @@ const DividerVertical = styled.div`
   :after {
     content: '';
     flex-grow: 1;
-    height: 1px;
-    width: 100%;
+    height: 100%;
+    width: 1px;
   }
 `;
 

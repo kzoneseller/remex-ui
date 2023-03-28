@@ -19,7 +19,7 @@ const TextInput = forwardRef<HTMLDivElement, TextInputProps>(
         <Label htmlFor={id}>{labelText}</Label>
         <InnerInput fullWidth={fullWidth} variant={variant}>
           {Boolean(startIcon) && startIcon}
-          <Input id={id} {...props} />
+          <Input id={id} fullWidth={fullWidth} {...props} />
         </InnerInput>
       </StyledTextInput>
     );
