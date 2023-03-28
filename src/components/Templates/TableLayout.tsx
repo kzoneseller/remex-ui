@@ -14,7 +14,7 @@ interface TableLayoutProps {
   count: number;
   currentPage: number;
   onChangePagination: (e: SyntheticEvent<HTMLDivElement, Event>, value: number) => void;
-  customStyle: CustomStyle;
+  customStyle?: CustomStyle;
 }
 
 const TableLayout: FC<PropsWithChildren<TableLayoutProps>> = ({

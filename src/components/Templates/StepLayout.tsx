@@ -7,7 +7,7 @@ interface StepLayoutProps {
   hide?: boolean;
   step: number;
   setStep?: Dispatch<SetStateAction<number>>;
-  customStyle: CustomStyle;
+  customStyle?: CustomStyle;
 }
 
 const StepLayout: FC<PropsWithChildren<StepLayoutProps>> = ({ hide = false, step, setStep, customStyle, children }) => {

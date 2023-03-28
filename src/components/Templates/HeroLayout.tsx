@@ -4,7 +4,7 @@ import { CustomStyle } from 'utils/theme';
 import { HeroLayoutContents, StyledHeroLayout } from './templates.styles';
 
 interface HeroLayoutProps {
-  customStyle: CustomStyle;
+  customStyle?: CustomStyle;
 }
 
 const HeroLayout: FC<PropsWithChildren<HeroLayoutProps>> = ({ customStyle, children }) => {
