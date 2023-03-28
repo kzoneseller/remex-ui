@@ -13,4 +13,5 @@ export { default as SideNavigation } from './SideNavigation';
 export { default as Skeleton } from './Skeleton';
 export * from './Table';
 export * from './Tabs';
+export * from './Templates';
 export { default as TextInput } from './TextInput';
