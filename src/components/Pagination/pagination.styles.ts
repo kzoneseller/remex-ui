@@ -5,6 +5,7 @@ export const StyledPagination = styled.div`
   display: inline-flex;
   align-items: flex-end;
   user-select: none;
+  width: available;
 `;
 
 export const PaginationScroller = styled.div`
@@ -19,7 +20,7 @@ export const PaginationScroller = styled.div`
 `;
 
 export const StyledPaginationItem = styled.div<{ active: boolean }>`
-  background-color: ${({ active, theme: { colors } }) => (active ? colors.mainBlue : colors.white)};
+  background-color: ${({ active, theme: { colors } }) => active && colors.mainBlue};
   color: ${({ active, theme: { colors } }) => (active ? colors.white : colors.mainBlue)};
   padding: 2px 8px;
   border-radius: 4px;
@@ -30,6 +31,10 @@ export const StyledPaginationItem = styled.div<{ active: boolean }>`
   letter-spacing: 0.004em;
   cursor: pointer;
   transition-duration: 0.3s;
+
+  :hover {
+    background-color: ${({ theme: { colors } }) => colors.white};
+  }
 `;
 
 export const Icon = styled.div<{ disabled?: boolean }>`

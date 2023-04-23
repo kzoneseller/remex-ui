@@ -7,12 +7,12 @@ const DividerHorizontal = styled.div`
 
   height: 0;
   flex-direction: row;
-  color: ${({ theme: { colors } }) => colors.textGrey};
+  color: ${({ theme: { colors } }) => colors.lightGray};
   padding: 0 20px;
 
   :before,
   :after {
-    background-color: ${({ theme: { colors } }) => colors.textGrey};
+    background-color: ${({ theme: { colors } }) => colors.lightGray};
   }
 
   :before,

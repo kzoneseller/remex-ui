@@ -9,11 +9,11 @@ const DividerVertical = styled.div`
   height: auto;
   width: 1rem;
   flex-direction: column;
-  color: ${({ theme: { colors } }) => colors.textGrey};
+  color: ${({ theme: { colors } }) => colors.lightGray};
 
   :before,
   :after {
-    background-color: ${({ theme: { colors } }) => colors.border};
+    background-color: ${({ theme: { colors } }) => colors.lightGray};
   }
 
   :before,
