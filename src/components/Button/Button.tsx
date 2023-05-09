@@ -1,5 +1,6 @@
 import { useTheme } from '@emotion/react';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { StyledButton } from './button.styles';
@@ -12,36 +13,34 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   customStyle?: CustomStyle;
 }
 
-const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  variant = 'contained',
-  color = 'blue',
-  size = 'medium',
-  fullWidth = false,
-  customStyle,
-  children,
-  ...props
-}) => {
-  const { colors } = useTheme();
+const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
+  (
+    { variant = 'contained', color = 'blue', size = 'medium', fullWidth = false, customStyle, children, ...props },
+    ref
+  ) => {
+    const { colors } = useTheme();
 
-  const COLORS = {
-    blue: colors.mainBlue,
-    black: colors.mainBlack,
-    grey: colors.mainGrey,
-    red: colors.error,
-  };
+    const COLORS = {
+      blue: colors.mainBlue,
+      black: colors.mainBlack,
+      grey: colors.mainGrey,
+      red: colors.error,
+    };
 
-  return (
-    <StyledButton
-      css={customStyle}
-      variant={variant}
-      color={COLORS[color]}
-      size={size}
-      fullWidth={fullWidth}
-      {...props}
-    >
-      {children}
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton
+        ref={ref}
+        css={customStyle}
+        variant={variant}
+        color={COLORS[color]}
+        size={size}
+        fullWidth={fullWidth}
+        {...props}
+      >
+        {children}
+      </StyledButton>
+    );
+  }
+);
 
 export default Button;

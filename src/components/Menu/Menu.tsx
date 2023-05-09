@@ -1,4 +1,5 @@
-import type { FC, HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
+import type { HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { MenuTitle, StyledMenu } from './menu.styles';
@@ -8,13 +9,15 @@ interface MenuProp extends Omit<HTMLAttributes<HTMLUListElement>, 'title'> {
   customStyle?: CustomStyle;
 }
 
-const Menu: FC<PropsWithChildren<MenuProp>> = ({ title, children, customStyle, ...props }) => {
-  return (
-    <StyledMenu css={customStyle} {...props}>
-      <MenuTitle>{title}</MenuTitle>
-      {children}
-    </StyledMenu>
-  );
-};
+const Menu = forwardRef<HTMLUListElement, PropsWithChildren<MenuProp>>(
+  ({ title, children, customStyle, ...props }, ref) => {
+    return (
+      <StyledMenu ref={ref} css={customStyle} {...props}>
+        <MenuTitle>{title}</MenuTitle>
+        {children}
+      </StyledMenu>
+    );
+  }
+);
 
 export default Menu;

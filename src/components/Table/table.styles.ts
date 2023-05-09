@@ -19,6 +19,7 @@ export const StyledTable = styled.table`
 export const StyledTableHead = styled.thead`
   display: table-header-group;
   border-radius: 8px;
+  user-select: none;
 
   th {
     background: ${({ theme: { colors } }) => colors.line};

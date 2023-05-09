@@ -1,5 +1,6 @@
 import { useTheme } from '@emotion/react';
-import type { FC, InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { StyledRadio } from './radio.styles';
@@ -9,7 +10,7 @@ interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
   customStyle?: CustomStyle;
 }
 
-const Radio: FC<RadioProps> = ({ color = 'blue', customStyle, ...props }) => {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(({ color = 'blue', customStyle, ...props }, ref) => {
   const { colors } = useTheme();
 
   const COLORS = {
@@ -19,7 +20,7 @@ const Radio: FC<RadioProps> = ({ color = 'blue', customStyle, ...props }) => {
     red: colors.error,
   };
 
-  return <StyledRadio type="radio" color={COLORS[color]} css={customStyle} {...props} />;
-};
+  return <StyledRadio ref={ref} type="radio" color={COLORS[color]} css={customStyle} {...props} />;
+});
 
 export default Radio;

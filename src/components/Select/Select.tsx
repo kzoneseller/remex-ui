@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import ReactSelect, { Props as ReactSelectProps } from 'react-select';
+import ReactSelect, { type Props as ReactSelectProps } from 'react-select';
 import type { CustomStyle } from 'utils/theme';
 
 interface SelectProps extends ReactSelectProps {

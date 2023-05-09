@@ -1,6 +1,6 @@
 import { Logo } from 'assets/svg';
-import type { FC, PropsWithChildren } from 'react';
-import { useEffect } from 'react';
+import type { PropsWithChildren } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { disableScroll, enableScroll } from 'utils/scroll';
 import type { CustomStyle } from 'utils/theme';
 
@@ -12,35 +12,32 @@ interface SideNavigationProps {
   customStyle?: CustomStyle;
 }
 
-const SideNavigation: FC<PropsWithChildren<SideNavigationProps>> = ({
-  open = true,
-  onClose,
-  children,
-  customStyle,
-}) => {
-  useEffect(() => {
-    if (open) {
-      disableScroll();
-    } else {
-      enableScroll();
-    }
-  }, [open]);
+const SideNavigation = forwardRef<HTMLElement, PropsWithChildren<SideNavigationProps>>(
+  ({ open = true, onClose, children, customStyle }, ref) => {
+    useEffect(() => {
+      if (open) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
+    }, [open]);
 
-  return (
-    <>
-      <BackDrop onClick={onClose} open={open} />
-      <StyledSideNavigation css={customStyle} open={open}>
-        <Inner open={open}>
-          <LogoBox>
-            <a href="/" aria-current="page" aria-label="Homepage">
-              <Logo />
-            </a>
-          </LogoBox>
-          <Contents>{children}</Contents>
-        </Inner>
-      </StyledSideNavigation>
-    </>
-  );
-};
+    return (
+      <>
+        <BackDrop onClick={onClose} open={open} />
+        <StyledSideNavigation ref={ref} css={customStyle} open={open}>
+          <Inner open={open}>
+            <LogoBox>
+              <a href="/" aria-current="page" aria-label="Homepage">
+                <Logo />
+              </a>
+            </LogoBox>
+            <Contents>{children}</Contents>
+          </Inner>
+        </StyledSideNavigation>
+      </>
+    );
+  }
+);
 
 export default SideNavigation;

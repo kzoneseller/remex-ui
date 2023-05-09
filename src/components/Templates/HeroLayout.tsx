@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react';
+import { forwardRef, PropsWithChildren } from 'react';
 import { CustomStyle } from 'utils/theme';
 
 import { HeroLayoutContents, StyledHeroLayout } from './templates.styles';
@@ -7,12 +7,12 @@ interface HeroLayoutProps {
   customStyle?: CustomStyle;
 }
 
-const HeroLayout: FC<PropsWithChildren<HeroLayoutProps>> = ({ customStyle, children }) => {
+const HeroLayout = forwardRef<HTMLDivElement, PropsWithChildren<HeroLayoutProps>>(({ customStyle, children }, ref) => {
   return (
-    <StyledHeroLayout css={customStyle}>
+    <StyledHeroLayout ref={ref} css={customStyle}>
       <HeroLayoutContents>{children}</HeroLayoutContents>
     </StyledHeroLayout>
   );
-};
+});
 
 export default HeroLayout;

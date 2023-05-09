@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
-import { useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { forwardRef, useMemo } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { Actions, Body, InnerBorder, StyledCard, Title } from './card.styles';
@@ -9,28 +9,31 @@ interface CardProps {
   actions?: ReactNode;
   showBorder?: boolean;
   customStyle?: CustomStyle;
+  customBodyStyle?: CustomStyle;
   children?: ReactNode;
 }
 
-const Card: FC<CardProps> = ({ title, actions, showBorder = false, customStyle, children }) => {
-  const contents = useMemo(
-    () => (
-      <>
-        {children}
-        {Boolean(actions) && <Actions>{actions}</Actions>}
-      </>
-    ),
-    [actions, children]
-  );
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ title, actions, showBorder = false, customStyle, customBodyStyle, children }, ref) => {
+    const contents = useMemo(
+      () => (
+        <>
+          {children}
+          {Boolean(actions) && <Actions>{actions}</Actions>}
+        </>
+      ),
+      [actions, children]
+    );
 
-  return (
-    <StyledCard css={customStyle}>
-      <Body>
-        {Boolean(title) && <Title>{title}</Title>}
-        {showBorder ? <InnerBorder>{contents}</InnerBorder> : contents}
-      </Body>
-    </StyledCard>
-  );
-};
+    return (
+      <StyledCard ref={ref} css={customStyle}>
+        <Body css={customBodyStyle}>
+          {Boolean(title) && <Title>{title}</Title>}
+          {showBorder ? <InnerBorder>{contents}</InnerBorder> : contents}
+        </Body>
+      </StyledCard>
+    );
+  }
+);
 
 export default Card;

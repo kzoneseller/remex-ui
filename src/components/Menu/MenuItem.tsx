@@ -1,4 +1,5 @@
-import type { FC, LiHTMLAttributes, PropsWithChildren, ReactNode } from 'react';
+import type { LiHTMLAttributes, PropsWithChildren, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { Label, StyledMenuItem } from './menu.styles';
@@ -8,13 +9,15 @@ interface MenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
   customStyle?: CustomStyle;
 }
 
-const MenuItem: FC<PropsWithChildren<MenuItemProps>> = ({ icon, children, customStyle, ...props }) => {
-  return (
-    <StyledMenuItem css={customStyle} {...props}>
-      {icon}
-      <Label>{children}</Label>
-    </StyledMenuItem>
-  );
-};
+const MenuItem = forwardRef<HTMLLIElement, PropsWithChildren<MenuItemProps>>(
+  ({ icon, children, customStyle, ...props }, ref) => {
+    return (
+      <StyledMenuItem ref={ref} css={customStyle} {...props}>
+        {icon}
+        <Label>{children}</Label>
+      </StyledMenuItem>
+    );
+  }
+);
 
 export default MenuItem;

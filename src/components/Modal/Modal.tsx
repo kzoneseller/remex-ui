@@ -1,5 +1,5 @@
-import type { FC, PropsWithChildren } from 'react';
-import { useEffect } from 'react';
+import type { PropsWithChildren } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { disableScroll, enableScroll } from 'utils/scroll';
 import type { CustomStyle } from 'utils/theme';
 
@@ -11,21 +11,23 @@ interface ModalProps {
   customStyle?: CustomStyle;
 }
 
-const Modal: FC<PropsWithChildren<ModalProps>> = ({ open = false, onClose, customStyle, children }) => {
-  useEffect(() => {
-    if (open) {
-      disableScroll();
-    } else {
-      enableScroll();
-    }
-  }, [open]);
+const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>(
+  ({ open = false, onClose, customStyle, children }, ref) => {
+    useEffect(() => {
+      if (open) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
+    }, [open]);
 
-  return open ? (
-    <StyledModal css={customStyle}>
-      <Backdrop onClick={onClose} />
-      <Contents>{children}</Contents>
-    </StyledModal>
-  ) : null;
-};
+    return open ? (
+      <StyledModal ref={ref} css={customStyle}>
+        <Backdrop onClick={onClose} />
+        <Contents>{children}</Contents>
+      </StyledModal>
+    ) : null;
+  }
+);
 
 export default Modal;

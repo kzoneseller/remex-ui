@@ -1,4 +1,5 @@
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { Main, StyledLayout } from './layout.styles';
@@ -9,14 +10,16 @@ interface LayoutProps {
   customStyle?: CustomStyle;
 }
 
-const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, header, sideNavigation, customStyle }) => {
-  return (
-    <StyledLayout css={customStyle} hasSideNavigation={Boolean(sideNavigation)}>
-      {header}
-      {sideNavigation}
-      <Main>{children}</Main>
-    </StyledLayout>
-  );
-};
+const Layout = forwardRef<HTMLDivElement, PropsWithChildren<LayoutProps>>(
+  ({ children, header, sideNavigation, customStyle }, ref) => {
+    return (
+      <StyledLayout ref={ref} css={customStyle} hasSideNavigation={Boolean(sideNavigation)}>
+        {header}
+        {sideNavigation}
+        <Main>{children}</Main>
+      </StyledLayout>
+    );
+  }
+);
 
 export default Layout;

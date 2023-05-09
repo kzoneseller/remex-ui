@@ -1,5 +1,6 @@
 import { useTheme } from '@emotion/react';
-import type { FC, InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
 
 import { StyledCheckbox } from './checkbox.styles';
@@ -9,7 +10,7 @@ interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'typ
   customStyle?: CustomStyle;
 }
 
-const Checkbox: FC<CheckboxProps> = ({ color = 'blue', customStyle, ...props }) => {
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ color = 'blue', customStyle, ...props }, ref) => {
   const { colors } = useTheme();
 
   const COLORS = {
@@ -19,7 +20,7 @@ const Checkbox: FC<CheckboxProps> = ({ color = 'blue', customStyle, ...props }) 
     red: colors.error,
   };
 
-  return <StyledCheckbox type="checkbox" color={COLORS[color]} css={{ customStyle }} {...props} />;
-};
+  return <StyledCheckbox ref={ref} type="checkbox" color={COLORS[color]} css={{ customStyle }} {...props} />;
+});
 
 export default Checkbox;
