@@ -9,9 +9,9 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
 }
 
 const TableHead = forwardRef<HTMLTableSectionElement, PropsWithChildren<TableHeadProps>>(
-  ({ children, customStyle, ...props }) => {
+  ({ children, customStyle, ...props }, ref) => {
     return (
-      <StyledTableHead css={customStyle} {...props}>
+      <StyledTableHead ref={ref} css={customStyle} {...props}>
         {children}
       </StyledTableHead>
     );

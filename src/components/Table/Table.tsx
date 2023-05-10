@@ -8,12 +8,14 @@ interface TableProps extends HTMLAttributes<HTMLTableElement> {
   customStyle?: CustomStyle;
 }
 
-const Table = forwardRef<HTMLTableElement, PropsWithChildren<TableProps>>(({ customStyle, children, ...props }) => {
-  return (
-    <StyledTable css={customStyle} {...props}>
-      {children}
-    </StyledTable>
-  );
-});
+const Table = forwardRef<HTMLTableElement, PropsWithChildren<TableProps>>(
+  ({ customStyle, children, ...props }, ref) => {
+    return (
+      <StyledTable ref={ref} css={customStyle} {...props}>
+        {children}
+      </StyledTable>
+    );
+  }
+);
 
 export default Table;
