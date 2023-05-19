@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StyledSort = styled.div<{ isDesc?: boolean }>`
+export const StyledSort = styled.div<{ isDesc?: boolean; showIcon?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,13 @@ export const StyledSort = styled.div<{ isDesc?: boolean }>`
   cursor: pointer;
 
   svg {
-    transform: rotate(${({ isDesc }) => (isDesc ? 180 : 0)}deg);
-    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    path:nth-child(3) {
+      color: ${({ showIcon, isDesc, theme: { colors } }) => (showIcon && !isDesc ? colors.mainBlue : colors.mainGrey)};
+    }
+    path:nth-child(2) {
+      color: ${({ showIcon, isDesc, theme: { colors } }) => (showIcon && isDesc ? colors.mainBlue : colors.mainGrey)};
+    }
   }
 `;

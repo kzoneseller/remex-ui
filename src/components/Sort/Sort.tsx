@@ -1,4 +1,4 @@
-import { IconArrowUp } from '@tabler/icons-react';
+import Selector from 'assets/selector.svg';
 import { forwardRef, type HTMLAttributes } from 'react';
 import { CustomStyle } from 'utils/theme';
 
@@ -11,11 +11,11 @@ interface SortProps extends HTMLAttributes<HTMLDivElement> {
   customStyle?: CustomStyle;
 }
 
-const Sort = forwardRef<HTMLDivElement, SortProps>(({ label, showIcon = false, customStyle, ...props }, ref) => {
+const Sort = forwardRef<HTMLDivElement, SortProps>(({ label, customStyle, ...props }, ref) => {
   return (
     <StyledSort ref={ref} css={customStyle} {...props}>
       <p>{label}</p>
-      {showIcon && <IconArrowUp width={16} height={16} />}
+      <Selector />
     </StyledSort>
   );
 });
