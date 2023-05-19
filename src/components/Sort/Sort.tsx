@@ -1,4 +1,4 @@
-import Selector from 'assets/selector.svg';
+import { Selector } from 'assets/svg';
 import { forwardRef, type HTMLAttributes } from 'react';
 import { CustomStyle } from 'utils/theme';
 
