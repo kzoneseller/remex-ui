@@ -10,11 +10,14 @@ export const StyledSort = styled.div<{ isDesc?: boolean; showIcon?: boolean }>`
   svg {
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
-    path:first-of-type {
-      color: ${({ showIcon, isDesc, theme: { colors } }) => (showIcon && !isDesc ? colors.mainBlue : colors.mainGrey)};
+    path {
+      color: ${({ theme: { colors } }) => colors.mainGrey};
     }
-    path:last-of-type {
-      color: ${({ showIcon, isDesc, theme: { colors } }) => (showIcon && isDesc ? colors.mainBlue : colors.mainGrey)};
+    path:nth-child(3) {
+      color: ${({ showIcon, isDesc, theme: { colors } }) => showIcon && !isDesc && colors.mainBlue};
+    }
+    path:nth-child(2) {
+      color: ${({ showIcon, isDesc, theme: { colors } }) => showIcon && isDesc && colors.mainBlue};
     }
   }
 `;
