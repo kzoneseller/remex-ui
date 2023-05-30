@@ -9,7 +9,7 @@ jobs:
   bump-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: git config --global user.email "github-actions@kzoneseller.com"
       - run: git config --global user.name "GitHub Actions"
       - uses: actions/setup-node@v1
