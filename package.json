@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "vite",
     "clean": "rimraf -rf dist",
-    "build": "pnpm clean && vite build",
+    "build": "vite build",
+    "build:dev": "pnpm clean && vite build",
     "types": "tsc --noEmit --incremental false --pretty"
   },
   "devDependencies": {
