@@ -13,10 +13,10 @@ export const StyledSort = styled.div<{ isDesc?: boolean; showIcon?: boolean }>`
     path {
       color: ${({ theme: { colors } }) => colors.mainGrey};
     }
-    path:nth-child(3) {
+    path:nth-of-type(3) {
       color: ${({ showIcon, isDesc, theme: { colors } }) => showIcon && !isDesc && colors.mainBlue};
     }
-    path:nth-child(2) {
+    path:nth-of-type(2) {
       color: ${({ showIcon, isDesc, theme: { colors } }) => showIcon && isDesc && colors.mainBlue};
     }
   }

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import type { HTMLAttributes, PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
@@ -9,9 +10,9 @@ interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
 }
 
 const TableHead = forwardRef<HTMLTableSectionElement, PropsWithChildren<TableHeadProps>>(
-  ({ children, customStyle, ...props }, ref) => {
+  ({ children, customStyle, className, ...props }, ref) => {
     return (
-      <StyledTableHead ref={ref} css={customStyle} {...props}>
+      <StyledTableHead ref={ref} css={customStyle} className={clsx('thead', className)} {...props}>
         {children}
       </StyledTableHead>
     );

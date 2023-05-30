@@ -10,7 +10,6 @@ interface TableLayoutProps {
   actions?: ReactNode;
   showEmpty?: boolean;
   pageTitle: string;
-
   count: number;
   currentPage: number;
   onChangePagination: (e: SyntheticEvent<HTMLDivElement, Event>, value: number) => void;
@@ -30,12 +29,10 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
           <>
             <TableLayoutContents>
               <Card
-                customStyle={css`
+                customBodyStyle={css`
                   @media only screen and (max-width: 820px) {
-                    & > div {
-                      padding: 0;
-                      background-color: transparent;
-                    }
+                    padding: 0;
+                    background-color: transparent;
                   }
                 `}
               >

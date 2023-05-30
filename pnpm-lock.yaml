@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.59.6
   '@typescript-eslint/parser': ^5.59.6
   '@vitejs/plugin-react-swc': ^3.3.1
+  clsx: ^1.2.1
   emotion-normalize: ^11.0.1
   eslint: ^8.41.0
   eslint-config-airbnb: ^19.0.4
@@ -47,6 +48,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.59.6_qajzm5xpii3p3sw5qvmsvgyhli
   '@typescript-eslint/parser': 5.59.6_opaykosi7ysrbskpnffskmbrki
   '@vitejs/plugin-react-swc': 3.3.1_vite@4.3.8
+  clsx: 1.2.1
   emotion-normalize: 11.0.1_s2jwwd4ifzjofup7sguc5tked4
   eslint: 8.41.0
   eslint-config-airbnb: 19.0.4_nl6ldqy7xwycsmzs6eqdnnduiu
@@ -1580,6 +1582,11 @@ packages:
       string-width: 5.1.2
     dev: true
 
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: true
+
   /code-block-writer/12.0.0:
     resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
     dev: true
@@ -1622,6 +1629,7 @@ packages:
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
+    requiresBuild: true
     dev: true
     optional: true
 

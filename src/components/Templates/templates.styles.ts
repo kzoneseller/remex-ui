@@ -79,75 +79,74 @@ export const TableLayoutTitle = styled.h6`
 `;
 
 export const TableLayoutContents = styled.section`
-  thead {
+  .thead {
     @media only screen and (max-width: 820px) {
       display: none;
     }
   }
 
-  tbody {
+  .tbody {
     @media only screen and (max-width: 820px) {
       width: 100%;
       float: left;
       border-bottom: none;
     }
-  }
 
-  tr {
-    position: relative;
-    width: 100%;
-
-    @media only screen and (max-width: 820px) {
-      float: left;
-      width: 100%;
+    & > .tr {
       position: relative;
-      box-shadow: 0 2px 17px 0 rgba(0, 0, 0, 0.07);
-      margin-bottom: 30px;
-      background-color: ${({ theme: { colors } }) => colors.white};
-      border-radius: 10px;
-      padding: 30px;
-    }
-  }
-
-  th {
-    border-top: none;
-
-    @media only screen and (max-width: 820px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      border-color: ${({ theme: { colors } }) => colors.mainGrey};
-      padding: 0 0 30px 0;
-    }
-  }
-
-  td {
-    @media only screen and (max-width: 820px) {
-      display: flex;
-      border-bottom: none;
-      padding: 30px 10px;
-      gap: 20px;
-    }
-  }
-
-  th > span,
-  td > span {
-    @media only screen and (max-width: 820px) {
-      text-align: left;
-    }
-
-    :first-of-type {
-      display: none;
 
       @media only screen and (max-width: 820px) {
-        display: inline-block;
-        max-width: 80px;
-        min-width: 80px;
+        float: left;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 17px 0 rgba(0, 0, 0, 0.07);
+        margin-bottom: 30px;
+        background-color: ${({ theme: { colors } }) => colors.white};
+        border-radius: 10px;
+        padding: 30px;
+      }
 
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 20px;
+      & > .th {
+        border-top: none;
+
+        @media only screen and (max-width: 820px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          border-color: ${({ theme: { colors } }) => colors.mainGrey};
+          padding: 0 0 30px 0;
+        }
+      }
+
+      & > .td {
+        @media only screen and (max-width: 820px) {
+          display: flex;
+          border-bottom: none;
+          padding: 30px 10px;
+          gap: 20px;
+        }
+      }
+
+      & > .th > span,
+      & > .td > span {
+        @media only screen and (max-width: 820px) {
+          text-align: left;
+        }
+
+        :first-of-type {
+          display: none;
+
+          @media only screen and (max-width: 820px) {
+            display: inline-block;
+            max-width: 80px;
+            min-width: 80px;
+
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
       }
     }
   }

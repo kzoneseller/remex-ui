@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import type { HTMLAttributes, PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
 import type { CustomStyle } from 'utils/theme';
@@ -9,9 +10,9 @@ interface TableProps extends HTMLAttributes<HTMLTableElement> {
 }
 
 const Table = forwardRef<HTMLTableElement, PropsWithChildren<TableProps>>(
-  ({ customStyle, children, ...props }, ref) => {
+  ({ customStyle, children, className, ...props }, ref) => {
     return (
-      <StyledTable ref={ref} css={customStyle} {...props}>
+      <StyledTable ref={ref} css={customStyle} className={clsx('table', className)} {...props}>
         {children}
       </StyledTable>
     );
