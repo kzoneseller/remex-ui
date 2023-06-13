@@ -9,67 +9,67 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   ${fonts};
 
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Black.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Black.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-ExtraBold.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-ExtraBold.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Bold.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Bold.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-SemiBold.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-SemiBold.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Medium.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Medium.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Regular.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Regular.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Light.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Light.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 200;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-ExtraLight.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-ExtraLight.ttf') format('truetype');
   }
   @font-face {
-    font-family: Min Sans;
+    font-family: Noto Sans;
     font-style: normal;
     font-weight: 100;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/MinSans-Thin.otf') format('opentype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Thin.ttf') format('truetype');
   }
 
   * {
@@ -109,9 +109,8 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: Min Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
+    font-family: Noto Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 
   body,
@@ -126,7 +125,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   button,
   input,
   textarea {
-    font-family: Min Sans, Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
+    font-family: Noto Sans, Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
     font-size: 12px;
     line-height: 18px;
     -webkit-appearance: none;
