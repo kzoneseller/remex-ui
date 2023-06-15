@@ -67,11 +67,7 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
             </NoImage>
           )}
           {loaded && (
-            <div
-              css={css`
-                position: relative;
-              `}
-            >
+            <>
               {error ? (
                 <NoImage onClick={handleClickNoImage}>
                   {mediaType === 'PDF' && (
@@ -86,7 +82,7 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
                 <StyledImg src={src} alt={alt} width={width} height={height} onClick={handleClickImage} />
               )}
               {Boolean(onRemove) && <CloseIcon onClick={handleClickRemove} />}
-            </div>
+            </>
           )}
           <HiddenImageLoader
             src={src}
