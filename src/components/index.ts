@@ -3,6 +3,7 @@ export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export * from './Divider';
 export { default as Header } from './Header';
+export { default as Image } from './Image';
 export { default as Layout } from './Layout';
 export * from './Menu';
 export { default as Modal } from './Modal';
