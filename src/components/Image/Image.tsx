@@ -2,7 +2,8 @@ import { css } from '@emotion/react';
 import { IconFileText, IconPhotoX } from '@tabler/icons-react';
 import Modal from 'components/Modal';
 import Skeleton from 'components/Skeleton';
-import { forwardRef, HTMLAttributes, type MouseEvent, useState } from 'react';
+import { forwardRef, HTMLAttributes, type MouseEvent, useMemo, useState } from 'react';
+import { CustomStyle } from 'utils/theme';
 
 import { CloseIcon, HiddenImageLoader, ImageWrapper, NoImage, StyledImg } from './image.styles';
 
@@ -14,14 +15,44 @@ interface ImageProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   width?: number;
   height?: number;
   onRemove?: () => void;
+  showShadow?: boolean;
+  customStyle?: CustomStyle;
 }
 
 const Image = forwardRef<HTMLDivElement, ImageProps>(
-  ({ coverImageUrl, url, alt, mediaType = 'IMAGE', width = 120, height = 120, onClick, onRemove, ...props }, ref) => {
+  (
+    {
+      coverImageUrl,
+      url,
+      alt,
+      mediaType = 'IMAGE',
+      width = 120,
+      height = 120,
+      onClick,
+      onRemove,
+      showShadow = true,
+      customStyle,
+      ...props
+    },
+    ref
+  ) => {
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(false);
     const [openModal, setOpenModal] = useState(false);
     const src = coverImageUrl ?? url;
+
+    const noImageIcon = useMemo(() => {
+      if (mediaType === 'PDF') {
+        return (
+          <>
+            <IconFileText />
+            PDF
+          </>
+        );
+      }
+
+      return <IconPhotoX />;
+    }, [mediaType]);
 
     const handleClickNoImage = (e: MouseEvent<HTMLDivElement>) => {
       if (onClick) {
@@ -55,7 +86,14 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
 
     return (
       <>
-        <ImageWrapper ref={ref} width={width} height={height} showShadow={loaded || error} {...props}>
+        <ImageWrapper
+          ref={ref}
+          width={width}
+          height={height}
+          showShadow={showShadow && loaded && !error}
+          css={customStyle}
+          {...props}
+        >
           {!loaded && !error && <Skeleton width={width} height={height} round={10} disableAspectRatio />}
           {!loaded && error && (
             <NoImage
@@ -69,15 +107,7 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
           {loaded && (
             <>
               {error ? (
-                <NoImage onClick={handleClickNoImage}>
-                  {mediaType === 'PDF' && (
-                    <>
-                      <IconFileText />
-                      PDF
-                    </>
-                  )}
-                  {mediaType !== 'PDF' && <IconPhotoX />}
-                </NoImage>
+                <NoImage onClick={handleClickNoImage}>{noImageIcon}</NoImage>
               ) : (
                 <StyledImg src={src} alt={alt} width={width} height={height} onClick={handleClickImage} />
               )}
