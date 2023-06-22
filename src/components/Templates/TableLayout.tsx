@@ -15,17 +15,17 @@ import {
 interface TableLayoutProps {
   actions?: ReactNode;
   showEmpty?: boolean;
-  totalElements?: number;
   pageTitle: string;
-  count: number;
+  totalPages: number;
   currentPage: number;
+  totalItems?: number;
   onChangePagination: (e: SyntheticEvent<HTMLDivElement, Event>, value: number) => void;
   customStyle?: CustomStyle;
 }
 
 const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProps>>(
   (
-    { actions, showEmpty, totalElements, pageTitle, children, count, currentPage, onChangePagination, customStyle },
+    { actions, showEmpty, pageTitle, children, totalPages, totalItems, currentPage, onChangePagination, customStyle },
     ref
   ) => {
     return (
@@ -46,16 +46,16 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
                   }
                 `}
               >
-                {totalElements && (
+                {totalItems && (
                   <Total>
-                    Total<span>{totalElements.toLocaleString()}</span>items
+                    Total<span>{totalItems.toLocaleString()}</span>items
                   </Total>
                 )}
                 {children}
               </Card>
             </TableLayoutContents>
             <Pagination
-              count={count}
+              count={totalPages}
               currentPage={currentPage}
               onChange={onChangePagination}
               customStyle={css`
