@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react-swc';
-import * as path from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
@@ -10,9 +10,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'remex-ui',
       formats: ['cjs', 'es'],
-      fileName: format => (format === 'cjs' ? 'index.js' : 'index.es.js'),
     },
     rollupOptions: {
       external: [...Object.keys(pkg.peerDependencies), /@emotion/g],
@@ -32,23 +30,23 @@ export default defineConfig({
     alias: [
       {
         find: 'assets',
-        replacement: path.resolve(__dirname, 'src/assets'),
+        replacement: resolve(__dirname, 'src/assets'),
       },
       {
         find: 'components',
-        replacement: path.resolve(__dirname, 'src/components'),
+        replacement: resolve(__dirname, 'src/components'),
       },
       {
         find: 'constants',
-        replacement: path.resolve(__dirname, 'src/constants'),
+        replacement: resolve(__dirname, 'src/constants'),
       },
       {
         find: 'types',
-        replacement: path.resolve(__dirname, 'src/types'),
+        replacement: resolve(__dirname, 'src/types'),
       },
       {
         find: 'utils',
-        replacement: path.resolve(__dirname, 'src/utils'),
+        replacement: resolve(__dirname, 'src/utils'),
       },
     ],
   },
