@@ -4,11 +4,18 @@ import Pagination from 'components/Pagination';
 import { forwardRef, PropsWithChildren, ReactNode, SyntheticEvent } from 'react';
 import { CustomStyle } from 'utils/theme';
 
-import { StyledTableLayout, TableLayoutActions, TableLayoutContents, TableLayoutTitle } from './templates.styles';
+import {
+  StyledTableLayout,
+  TableLayoutActions,
+  TableLayoutContents,
+  TableLayoutTitle,
+  Total,
+} from './templates.styles';
 
 interface TableLayoutProps {
   actions?: ReactNode;
   showEmpty?: boolean;
+  totalElements?: number;
   pageTitle: string;
   count: number;
   currentPage: number;
@@ -17,7 +24,10 @@ interface TableLayoutProps {
 }
 
 const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProps>>(
-  ({ actions, showEmpty, pageTitle, children, count, currentPage, onChangePagination, customStyle }, ref) => {
+  (
+    { actions, showEmpty, totalElements, pageTitle, children, count, currentPage, onChangePagination, customStyle },
+    ref
+  ) => {
     return (
       <StyledTableLayout ref={ref} css={customStyle}>
         {actions && <TableLayoutActions>{actions}</TableLayoutActions>}
@@ -36,6 +46,11 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
                   }
                 `}
               >
+                {totalElements && (
+                  <Total>
+                    Total<span>{totalElements.toLocaleString()}</span>items
+                  </Total>
+                )}
                 {children}
               </Card>
             </TableLayoutContents>

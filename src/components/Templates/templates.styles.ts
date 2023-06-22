@@ -151,3 +151,17 @@ export const TableLayoutContents = styled.section`
     }
   }
 `;
+
+export const Total = styled.p`
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  color: ${({ theme: { colors } }) => colors.textGrey};
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+
+  span {
+    color: ${({ theme: { colors } }) => colors.lightBlue};
+  }
+`;
