@@ -25,7 +25,17 @@ interface TableLayoutProps {
 
 const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProps>>(
   (
-    { actions, showEmpty, pageTitle, children, totalPages, totalItems, currentPage, onChangePagination, customStyle },
+    {
+      actions,
+      showEmpty,
+      pageTitle,
+      children,
+      totalPages,
+      totalItems = 0,
+      currentPage,
+      onChangePagination,
+      customStyle,
+    },
     ref
   ) => {
     return (
@@ -46,7 +56,7 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
                   }
                 `}
               >
-                {totalItems && (
+                {totalItems > 0 && (
                   <Total>
                     Total<span>{totalItems.toLocaleString()}</span>items
                   </Total>
