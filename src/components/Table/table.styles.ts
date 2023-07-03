@@ -49,11 +49,16 @@ export const StyledTableBody = styled.div`
   display: table-row-group;
 `;
 
-export const StyledTableRow = styled.div`
+export const StyledTableRow = styled.div<{ hideLine: boolean }>`
   color: inherit;
   display: table-row;
   vertical-align: middle;
   outline: 0;
+
+  .td,
+  .th {
+    border-bottom-width: ${({ hideLine }) => hideLine && 0};
+  }
 `;
 
 const BaseTableData = css`
@@ -62,10 +67,10 @@ const BaseTableData = css`
   padding: 16px 20px;
 `;
 
-export const StyledTableHeadData = styled.div<{ hideLine: boolean }>`
+export const StyledTableHeadData = styled.div`
   ${BaseTableData};
 
-  border-bottom: ${({ hideLine, theme: { colors } }) => !hideLine && `1px solid ${colors.line}`};
+  border-bottom: 1px solid ${({ theme: { colors } }) => colors.line};
   color: ${({ theme: { colors } }) => colors.mainBlack};
   font-weight: 500;
   font-size: 0.875rem;
@@ -74,10 +79,10 @@ export const StyledTableHeadData = styled.div<{ hideLine: boolean }>`
   letter-spacing: 0.01071em;
 `;
 
-export const StyledTableData = styled.div<{ hideLine: boolean }>`
+export const StyledTableData = styled.div`
   ${BaseTableData};
 
-  border-bottom: ${({ hideLine, theme: { colors } }) => !hideLine && `1px solid ${colors.line}`};
+  border-bottom: 1px solid ${({ theme: { colors } }) => colors.line};
   color: ${({ theme: { colors } }) => colors.mainBlack};
   font-weight: 400;
   font-size: 14px;
