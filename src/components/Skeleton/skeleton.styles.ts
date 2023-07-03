@@ -65,7 +65,7 @@ export const StyledSkeleton = styled.div<
       transform: 'translate(-50%, -50%)',
     }};
 
-  ${({ theme: { colors }, animation, disableAnimation }) => {
+  ${({ theme: { colors, keyframes }, animation, disableAnimation }) => {
     if (disableAnimation) {
       return {};
     }
@@ -82,7 +82,7 @@ export const StyledSkeleton = styled.div<
           background: `linear-gradient(-45deg, ${colors.lightGray} 30%,transparent 50%, ${colors.lightGray} 70%)`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: '350% 350%',
-          animation: 'wave 1.2s ease-in-out infinite',
+          animation: `${keyframes.wave} 1.2s ease-in-out infinite`,
           animationDelay: '-0.2s',
           opacity: 0.6,
         },
@@ -90,24 +90,7 @@ export const StyledSkeleton = styled.div<
     }
 
     return {
-      animation: 'pulse 0.8s linear 0s infinite alternate',
+      animation: `${keyframes.pulse} 0.8s linear 0s infinite alternate`,
     };
   }};
-
-  @keyframes pulse {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0.2;
-    }
-  }
-  @keyframes wave {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
-  }
 `;

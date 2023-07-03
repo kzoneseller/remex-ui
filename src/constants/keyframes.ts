@@ -39,11 +39,18 @@ const checkmark = emotionKeyframes`
   }
 `;
 
+const spin = emotionKeyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const keyframes = {
   fadeInDim,
   pulse,
   wave,
   checkmark,
+  spin,
 } as const;
 
 export type KeyframeKeys = keyof typeof keyframes;
