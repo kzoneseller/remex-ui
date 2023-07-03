@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const StyledTextInput = styled.div<{ fullWidth: boolean }>`
+export const StyledTextInput = styled.div<{ fullWidth: boolean; disabled?: boolean }>`
   display: flex;
   align-items: center;
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
   height: 40px;
   max-height: 40px;
-  background: ${({ theme: { colors } }) => colors.white};
+  background: ${({ theme: { colors }, disabled }) => (disabled ? colors.ghostGray : colors.white)};
   border-radius: 10px;
 `;
 
@@ -56,8 +56,8 @@ export const Input = styled.input<{ fullWidth: boolean }>`
   }
 
   :disabled {
-    cursor: pointer;
-    background-color: ${({ theme: { colors } }) => colors.white};
+    cursor: default;
+    background: ${({ theme: { colors }, disabled }) => (disabled ? colors.ghostGray : colors.white)};
   }
 
   ::placeholder {

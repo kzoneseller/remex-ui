@@ -13,13 +13,13 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextInput = forwardRef<HTMLDivElement, TextInputProps>(
-  ({ variant = 'filled', fullWidth = false, id, labelText, startIcon, customStyle, ...props }, ref) => {
+  ({ variant = 'filled', fullWidth = false, id, labelText, startIcon, customStyle, disabled, ...props }, ref) => {
     return (
-      <StyledTextInput ref={ref} fullWidth={fullWidth} css={customStyle}>
+      <StyledTextInput ref={ref} fullWidth={fullWidth} disabled={disabled} css={customStyle}>
         <Label htmlFor={id}>{labelText}</Label>
         <InnerInput fullWidth={fullWidth} variant={variant}>
           {Boolean(startIcon) && startIcon}
-          <Input id={id} fullWidth={fullWidth} {...props} />
+          <Input id={id} fullWidth={fullWidth} disabled={disabled} {...props} />
         </InnerInput>
       </StyledTextInput>
     );
