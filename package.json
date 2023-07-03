@@ -1,6 +1,6 @@
 {
   "name": "remex-ui",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "Remex React UI Components",
   "type": "module",
   "main": "./dist/remex-ui.cjs",
