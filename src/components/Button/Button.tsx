@@ -10,12 +10,22 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: 'blue' | 'black' | 'grey' | 'red';
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
+  isLoading?: boolean;
   customStyle?: CustomStyle;
 }
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
   (
-    { variant = 'contained', color = 'blue', size = 'medium', fullWidth = false, customStyle, children, ...props },
+    {
+      variant = 'contained',
+      color = 'blue',
+      size = 'medium',
+      fullWidth = false,
+      isLoading = false,
+      customStyle,
+      children,
+      ...props
+    },
     ref
   ) => {
     const { colors } = useTheme();
@@ -35,6 +45,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
         color={COLORS[color]}
         size={size}
         fullWidth={fullWidth}
+        isLoading={isLoading}
         {...props}
       >
         {children}

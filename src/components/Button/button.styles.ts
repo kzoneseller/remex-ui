@@ -6,6 +6,7 @@ export const StyledButton = styled.button<{
   color: string;
   size: 'small' | 'medium' | 'large';
   fullWidth: boolean;
+  isLoading: boolean;
 }>`
   display: inline-flex;
   gap: 10px;
@@ -33,6 +34,25 @@ export const StyledButton = styled.button<{
   ${({ variant, color, theme: { colors } }) => VARIANT[variant]({ color: color, backgroundColor: colors.white })};
 
   ${({ size }) => SIZE[size]};
+
+  ${({ isLoading, theme: { colors, keyframes } }) =>
+    isLoading &&
+    css`
+      transition: all 0.3s;
+      opacity: 0.8;
+      color: transparent;
+
+      :after {
+        content: '';
+        position: absolute;
+        animation: ${keyframes.spin} 1s linear infinite;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        border-top-color: ${colors.mainBlue};
+        height: 20px;
+        width: 20px;
+      }
+    `};
 `;
 
 type Variant = { color: string; backgroundColor: string };
