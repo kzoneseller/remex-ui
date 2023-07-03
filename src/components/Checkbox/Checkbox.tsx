@@ -20,7 +20,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ color = 'blue', 
     red: colors.error,
   };
 
-  return <StyledCheckbox ref={ref} type="checkbox" color={COLORS[color]} css={{ customStyle }} {...props} />;
+  return <StyledCheckbox ref={ref} type="checkbox" color={COLORS[color]} css={customStyle} {...props} />;
 });
 
 export default Checkbox;

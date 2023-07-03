@@ -143,7 +143,7 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
             }
           `}
         >
-          <img src={src} alt={alt} css={css``} />
+          <img src={src} alt={alt} />
           <CloseIcon
             css={css`
               top: 12px;
