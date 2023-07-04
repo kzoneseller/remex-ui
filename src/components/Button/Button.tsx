@@ -6,7 +6,7 @@ import type { CustomStyle } from 'utils/theme';
 import { StyledButton } from './button.styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'contained' | 'outlined' | 'ghost';
+  variant?: 'contained' | 'outlined' | 'ghost' | 'link';
   color?: 'blue' | 'black' | 'grey' | 'red';
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;

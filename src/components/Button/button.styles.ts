@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const StyledButton = styled.button<{
-  variant: 'contained' | 'outlined' | 'ghost';
+  variant: 'contained' | 'outlined' | 'ghost' | 'link';
   color: string;
   size: 'small' | 'medium' | 'large';
   fullWidth: boolean;
@@ -29,6 +29,9 @@ export const StyledButton = styled.button<{
     background-color: ${({ theme: { colors } }) => colors.lightGray};
     border: none;
     box-shadow: none;
+  }
+  :active {
+    transform: scale(0.9);
   }
 
   ${({ variant, color, theme: { colors } }) => VARIANT[variant]({ color: color, backgroundColor: colors.white })};
@@ -71,6 +74,10 @@ const VARIANT = {
     background-color: ${backgroundColor};
     color: ${color};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+  `,
+  link: ({ color }: Variant) => css`
+    color: ${color};
+    text-decoration: underline;
   `,
 };
 
