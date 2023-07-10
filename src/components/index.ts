@@ -1,6 +1,7 @@
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
+export { default as Chip } from './Chip';
 export * from './Divider';
 export { default as Header } from './Header';
 export { default as Image } from './Image';
@@ -17,3 +18,4 @@ export * from './Table';
 export * from './Tabs';
 export * from './Templates';
 export { default as TextInput } from './TextInput';
+export { default as UploadableImage } from './UploadableImage';
