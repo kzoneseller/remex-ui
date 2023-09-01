@@ -1,6 +1,7 @@
 const white = '#ffffff';
 const black = '#000000';
 const error = '#EF4E3A';
+const success = '#07BC0C';
 
 export const lightColors = {
   /* blue */
@@ -26,7 +27,7 @@ export const lightColors = {
   iconBlue: '#A1A0BD',
   border: '#E0DFF0',
   line: '#F6F7FB',
-  error,
+  error,success,
 } as const;
 
 export const darkColors = {
