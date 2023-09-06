@@ -27,6 +27,7 @@ export const lightColors = {
   iconBlue: '#A1A0BD',
   border: '#E0DFF0',
   line: '#F6F7FB',
+  amazon:'#008296',
   error,success,
 } as const;
 
