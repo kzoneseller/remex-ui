@@ -72,6 +72,22 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Thin.ttf') format('truetype');
   }
 
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  }
+
   * {
     ::-webkit-scrollbar {
       display: none;
@@ -109,7 +125,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: Noto Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    font-family: Noto Sans, Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 
@@ -125,7 +141,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   button,
   input,
   textarea {
-    font-family: Noto Sans, Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
+    font-family: Noto Sans, Poppins, Roboto, Noto Sans KR, Noto Sans JP, sans-serif;
     font-size: 12px;
     line-height: 18px;
     -webkit-appearance: none;
