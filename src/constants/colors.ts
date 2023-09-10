@@ -21,14 +21,16 @@ export const lightColors = {
   ghostGray: '#F5F6F8',
   textGrey: '#9C9C9C',
   borderGrey: '#D9D8D6',
+  grey3: '#ECECEC',
   /* common */
   white,
   bgBlue: '#F9FAFB',
   iconBlue: '#A1A0BD',
   border: '#E0DFF0',
   line: '#F6F7FB',
-  amazon:'#008296',
-  error,success,
+  amazon: '#008296',
+  error,
+  success,
 } as const;
 
 export const darkColors = {
