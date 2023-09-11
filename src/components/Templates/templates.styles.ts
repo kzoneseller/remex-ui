@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
 
+export const StyledHeroLayoutContainer = styled.div`
+  height: 100%;
+`;
+
 export const StyledHeroLayout = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100%;
   background-color: ${({ theme: { colors } }) => colors.bgBlue};
 `;
 

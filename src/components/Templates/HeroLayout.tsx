@@ -1,7 +1,7 @@
 import { forwardRef, PropsWithChildren } from 'react';
 import { CustomStyle } from 'utils/theme';
 
-import { HeroLayoutContents, StyledHeroLayout } from './templates.styles';
+import { HeroLayoutContents, StyledHeroLayout, StyledHeroLayoutContainer } from './templates.styles';
 
 interface HeroLayoutProps {
   customStyle?: CustomStyle;
@@ -9,9 +9,11 @@ interface HeroLayoutProps {
 
 const HeroLayout = forwardRef<HTMLDivElement, PropsWithChildren<HeroLayoutProps>>(({ customStyle, children }, ref) => {
   return (
-    <StyledHeroLayout ref={ref} css={customStyle}>
-      <HeroLayoutContents>{children}</HeroLayoutContents>
-    </StyledHeroLayout>
+    <StyledHeroLayoutContainer>
+      <StyledHeroLayout ref={ref} css={customStyle}>
+        <HeroLayoutContents>{children}</HeroLayoutContents>
+      </StyledHeroLayout>
+    </StyledHeroLayoutContainer>
   );
 });
 
