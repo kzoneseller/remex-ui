@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
-export const StyledHeroLayout = styled.div<{ isSignUp: boolean }>`
+export const StyledHeroLayout = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: ${({ isSignUp }) => (isSignUp ? '100vh' : '100%')};
+  height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.bgBlue};
 `;
 
