@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { lightColors } from 'constants/colors';
 import fonts from 'constants/fonts';
 import normalize from 'emotion-normalize';
 
@@ -135,6 +136,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     box-sizing: border-box;
     margin: 0;
     line-height: inherit;
+    background-color: ${lightColors.bgBlue};
   }
 
   body,
