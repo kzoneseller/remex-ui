@@ -89,6 +89,22 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
   }
 
+  @font-face {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../assets/fonts/NotoSansKR-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/NotoSansKR-Medium.ttf') format('truetype');
+  }
+
   * {
     ::-webkit-scrollbar {
       display: none;
