@@ -74,7 +74,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   }
 
   @font-face {
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-display: swap;
@@ -82,7 +82,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   }
 
   @font-face {
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -90,7 +90,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   }
 
   @font-face {
-    font-family: Noto Sans KR;
+    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 600;
     font-display: swap;
@@ -98,7 +98,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   }
 
   @font-face {
-    font-family: Noto Sans KR;
+    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
