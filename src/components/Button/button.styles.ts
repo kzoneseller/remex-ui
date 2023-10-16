@@ -69,6 +69,10 @@ const VARIANT = {
     background-color: ${backgroundColor};
     color: ${color};
     border: 1px solid ${color};
+
+    :disabled {
+      border: 1px solid #9c9c9c;
+    }
   `,
   ghost: ({ color, backgroundColor }: Variant) => css`
     background-color: ${backgroundColor};
