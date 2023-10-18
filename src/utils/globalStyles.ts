@@ -78,7 +78,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+    src: url('src/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
   }
 
   @font-face {
@@ -86,7 +86,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+    src: url('src/assets/fonts/Poppins-Medium.ttf') format('truetype');
   }
 
   @font-face {
@@ -94,7 +94,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('../assets/fonts/NotoSansKR-SemiBold.ttf') format('truetype');
+    src: url('src/assets/fonts/NotoSansKR-SemiBold.ttf') format('truetype');
   }
 
   @font-face {
@@ -102,7 +102,7 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../assets/fonts/NotoSansKR-Medium.ttf') format('truetype');
+    src: url('src/assets/fonts/NotoSansKR-Medium.ttf') format('truetype');
   }
 
   * {
