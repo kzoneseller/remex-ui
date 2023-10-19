@@ -73,38 +73,6 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Thin.ttf') format('truetype');
   }
 
-  @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('src/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('src/assets/fonts/Poppins-Medium.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('src/assets/fonts/NotoSansKR-SemiBold.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('src/assets/fonts/NotoSansKR-Medium.ttf') format('truetype');
-  }
-
   * {
     ::-webkit-scrollbar {
       display: none;
