@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const StyledTabs = styled.div`
   overflow: hidden;
+  width: fit-content;
   min-height: 56px;
   display: flex;
   user-select: none;
