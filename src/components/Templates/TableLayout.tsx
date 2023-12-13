@@ -16,6 +16,7 @@ interface TableLayoutProps {
   actions?: ReactNode;
   showEmpty?: boolean;
   pageTitle: string;
+  hidePagination?: boolean;
   totalPages: number;
   currentPage: number;
   totalItems?: number;
@@ -30,6 +31,7 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
       showEmpty,
       pageTitle,
       children,
+      hidePagination = false,
       totalPages,
       totalItems = 0,
       currentPage,
@@ -64,19 +66,21 @@ const TableLayout = forwardRef<HTMLDivElement, PropsWithChildren<TableLayoutProp
                 {children}
               </Card>
             </TableLayoutContents>
-            <Pagination
-              count={totalPages}
-              currentPage={currentPage}
-              onChange={onChangePagination}
-              customStyle={css`
-                width: 100%;
-                align-items: center;
+            {!hidePagination && (
+              <Pagination
+                count={totalPages}
+                currentPage={currentPage}
+                onChange={onChangePagination}
+                customStyle={css`
+                  width: 100%;
+                  align-items: center;
 
-                & > div {
-                  justify-content: center;
-                }
-              `}
-            />
+                  & > div {
+                    justify-content: center;
+                  }
+                `}
+              />
+            )}
           </>
         )}
       </StyledTableLayout>
