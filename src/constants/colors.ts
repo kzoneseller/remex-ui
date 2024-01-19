@@ -31,6 +31,7 @@ export const lightColors = {
   amazon: '#008296',
   error,
   success,
+  managementOrange: '#ff7a00',
 } as const;
 
 export const darkColors = {
