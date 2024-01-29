@@ -10,6 +10,49 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   ${fonts};
 
   @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-Black.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/Poppins-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
     font-family: Noto Sans;
     font-style: normal;
     font-weight: 900;
