@@ -23,13 +23,13 @@ export const InnerInput = styled.div<{ variant: 'filled' | 'outlined' | 'standar
   border-radius: 8px;
   transition: 0.2s;
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
+  gap: 8px;
 
   ${({ variant, theme: { colors } }) => VARIANT[variant]({ color: colors.border })};
 
   svg {
     width: 18px;
     height: 18px;
-    margin-right: 8px;
     color: ${({ theme: { colors } }) => colors.darkBlue};
   }
 `;
