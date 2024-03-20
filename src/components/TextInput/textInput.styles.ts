@@ -15,7 +15,11 @@ export const Label = styled.label`
   display: none;
 `;
 
-export const InnerInput = styled.div<{ variant: 'filled' | 'outlined' | 'standard'; fullWidth: boolean }>`
+export const InnerInput = styled.div<{
+  variant: 'filled' | 'outlined' | 'standard';
+  fullWidth: boolean;
+  hasError: boolean;
+}>`
   display: flex;
   align-items: center;
   padding: 12px 16px 10px;
@@ -25,7 +29,15 @@ export const InnerInput = styled.div<{ variant: 'filled' | 'outlined' | 'standar
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
   gap: 8px;
 
-  ${({ variant, theme: { colors } }) => VARIANT[variant]({ color: colors.border })};
+  ${({ variant, theme: { colors }, hasError }) => {
+    if (hasError) {
+      return css`
+        border: 1px solid ${colors.error};
+      `;
+    } else {
+      return VARIANT[variant]({ color: colors.border });
+    }
+  }};
 
   svg {
     width: 18px;

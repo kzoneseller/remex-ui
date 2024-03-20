@@ -11,17 +11,29 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   startIcon?: ReactElement;
   endIcon?: ReactElement;
   customStyle?: CustomStyle;
+  hasError?: boolean;
 }
 
 const TextInput = forwardRef<HTMLDivElement, TextInputProps>(
   (
-    { variant = 'filled', fullWidth = false, id, labelText, startIcon, endIcon, customStyle, disabled, ...props },
+    {
+      variant = 'filled',
+      fullWidth = false,
+      id,
+      labelText,
+      startIcon,
+      endIcon,
+      customStyle,
+      hasError = false,
+      disabled,
+      ...props
+    },
     ref
   ) => {
     return (
       <StyledTextInput ref={ref} fullWidth={fullWidth} disabled={disabled} css={customStyle}>
         <Label htmlFor={id}>{labelText}</Label>
-        <InnerInput fullWidth={fullWidth} variant={variant}>
+        <InnerInput fullWidth={fullWidth} variant={variant} hasError={hasError}>
           {Boolean(startIcon) && startIcon}
           <Input id={id} fullWidth={fullWidth} disabled={disabled} {...props} />
           {Boolean(endIcon) && endIcon}
