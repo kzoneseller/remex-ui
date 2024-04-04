@@ -32,6 +32,7 @@ export const lightColors = {
   error,
   success,
   managementOrange: '#ff7a00',
+  lightGreen: '#8ad89b',
 } as const;
 
 export const darkColors = {
