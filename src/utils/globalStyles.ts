@@ -116,6 +116,35 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
     src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSans-Thin.ttf') format('truetype');
   }
 
+  @font-face {
+    font-family: Noto Sans CJK;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Black.otf') format('truetype');
+  }
+  @font-face {
+    font-family: Noto Sans CJK;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Bold.otf') format('truetype');
+  }
+  @font-face {
+    font-family: Noto Sans CJK;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansKR-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Noto Sans CJK;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Regular.otf.ttf') format('truetype');
+  }
+
   * {
     ::-webkit-scrollbar {
       display: none;
