@@ -140,9 +140,16 @@ export const getGlobalStyles = (theme: typeof lightTheme | typeof darkTheme) => 
   @font-face {
     font-family: Noto Sans CJK;
     font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Medium.otf') format('truetype');
+  }
+  @font-face {
+    font-family: Noto Sans CJK;
+    font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Regular.otf.ttf') format('truetype');
+    src: url('https://d2ydppcem070q4.cloudfront.net/fonts/NotoSansCJKkr-Regular.otf') format('truetype');
   }
 
   * {
