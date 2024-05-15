@@ -29,6 +29,7 @@ export const lightColors = {
   border: '#E0DFF0',
   line: '#F6F7FB',
   amazon: '#008296',
+  amazonActive: '#005866',
   error,
   success,
   managementOrange: '#ff7a00',
