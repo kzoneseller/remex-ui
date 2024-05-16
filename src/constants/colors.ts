@@ -22,6 +22,7 @@ export const lightColors = {
   textGrey: '#9C9C9C',
   borderGrey: '#D9D8D6',
   grey3: '#ECECEC',
+  grey5: '#CED3DE',
   /* common */
   white,
   bgBlue: '#F9FAFB',
