@@ -34,6 +34,7 @@ export const lightColors = {
   success,
   managementOrange: '#ff7a00',
   lightGreen: '#8ad89b',
+  hoverActive: '#EAEDF5',
 } as const;
 
 export const darkColors = {
