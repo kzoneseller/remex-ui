@@ -33,7 +33,7 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     const firstNum = Math.trunc((currentPage - 1) / 10) * 10 + 1;
     const prevPage = firstNum - 1;
     const nextFirstNum = firstNum + 10;
-    const pageSize = (nextFirstNum < count ? nextFirstNum : count + 1) - firstNum;
+    const pageSize = (nextFirstNum <= count ? nextFirstNum : count + 1) - firstNum;
 
     const isPrevDisabled = prevPage < 1;
     const isNextDisabled = nextFirstNum > count;
