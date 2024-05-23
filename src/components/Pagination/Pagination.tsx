@@ -30,22 +30,38 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     },
     ref
   ) => {
-    const prevPage = currentPage - 1;
-    const nextPage = currentPage + 1;
-    const firstNum = Math.floor((currentPage - 1) / 10) * 10 + 1;
-    const lastNum = firstNum + 10;
-    const pageSize = (lastNum < count ? lastNum : count) - firstNum + (currentPage + 10 > count ? 1 : 0);
+    const firstNum = Math.trunc((currentPage - 1) / 10) * 10 + 1;
+    const prevPage = firstNum - 1;
+    const nextFirstNum = firstNum + 10;
+    const pageSize = (nextFirstNum < count ? nextFirstNum : count + 1) - firstNum;
+
+    const isPrevDisabled = prevPage < 1;
+    const isNextDisabled = nextFirstNum > count;
 
     return (
       <StyledPagination ref={ref} css={customStyle}>
         <PaginationScroller>
           {showFirstButton && (
-            <Icon onClick={e => onChange?.(e, 1)} disabled={currentPage === 1}>
+            <Icon
+              onClick={e => {
+                if (!isPrevDisabled) {
+                  onChange?.(e, 1);
+                }
+              }}
+              disabled={isPrevDisabled}
+            >
               <IconChevronsLeft />
             </Icon>
           )}
           {showPrevButton && (
-            <Icon onClick={e => onChange?.(e, prevPage < 1 ? 1 : prevPage)} disabled={prevPage < 1}>
+            <Icon
+              onClick={e => {
+                if (!isPrevDisabled) {
+                  onChange?.(e, prevPage < 1 ? 1 : prevPage);
+                }
+              }}
+              disabled={isPrevDisabled}
+            >
               <IconChevronLeft />
             </Icon>
           )}
@@ -59,12 +75,26 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
             </StyledPaginationItem>
           ))}
           {showNextButton && (
-            <Icon onClick={e => onChange?.(e, nextPage > count ? count : nextPage)} disabled={nextPage > count}>
+            <Icon
+              onClick={e => {
+                if (!isNextDisabled) {
+                  onChange?.(e, nextFirstNum > count ? count : nextFirstNum);
+                }
+              }}
+              disabled={isNextDisabled}
+            >
               <IconChevronRight />
             </Icon>
           )}
           {showLastButton && (
-            <Icon onClick={e => onChange?.(e, count)} disabled={currentPage === count || count === 0}>
+            <Icon
+              onClick={e => {
+                if (!isNextDisabled) {
+                  onChange?.(e, count);
+                }
+              }}
+              disabled={isNextDisabled}
+            >
               <IconChevronsRight />
             </Icon>
           )}
