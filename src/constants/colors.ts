@@ -21,6 +21,7 @@ export const lightColors = {
   ghostGray: '#F5F6F8',
   textGrey: '#9C9C9C',
   borderGrey: '#D9D8D6',
+  grey2: '#F1F5FA',
   grey3: '#ECECEC',
   grey5: '#CED3DE',
   grey7: '#878d99',
