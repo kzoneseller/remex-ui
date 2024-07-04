@@ -29,6 +29,7 @@ export const StyledButton = styled.button<{
     background-color: ${({ theme: { colors } }) => colors.lightGray};
     border: none;
     box-shadow: none;
+    transform: none;
   }
   :active {
     transform: scale(0.9);
