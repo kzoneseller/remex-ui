@@ -20,4 +20,5 @@ const TableRow = forwardRef<HTMLTableRowElement, PropsWithChildren<TableRowProps
   }
 );
 
+TableRow.displayName = 'TableRow';
 export default TableRow;

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { IconFileText, IconPhotoX, IconPlayerPlay, IconPlus } from '@tabler/icons-react';
-import Skeleton from 'components/Skeleton';
+import { Skeleton } from 'components/Skeleton';
 import { type ChangeEvent, forwardRef, type HTMLAttributes, type MouseEvent, useRef, useState } from 'react';
 import { CustomStyle } from 'utils/theme';
 

@@ -12,7 +12,7 @@ export { default as Pagination } from './Pagination';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
 export { default as SideNavigation } from './SideNavigation';
-export { default as Skeleton } from './Skeleton';
+export * from './Skeleton';
 export { default as Sort } from './Sort';
 export * from './Table';
 export * from './Tabs';

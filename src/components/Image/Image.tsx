@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { IconFileText, IconPhotoX } from '@tabler/icons-react';
 import Modal from 'components/Modal';
-import Skeleton from 'components/Skeleton';
+import { Skeleton } from 'components/Skeleton';
 import { forwardRef, HTMLAttributes, type MouseEvent, useMemo, useState } from 'react';
 import { CustomStyle } from 'utils/theme';
 
