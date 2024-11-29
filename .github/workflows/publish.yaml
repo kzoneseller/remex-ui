@@ -20,7 +20,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: src
-          path: ./src
+          path: ./
       - run: unzip src.zip
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
