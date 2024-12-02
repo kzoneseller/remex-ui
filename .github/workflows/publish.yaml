@@ -6,6 +6,7 @@ on:
       - Bump Version
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   publish:
