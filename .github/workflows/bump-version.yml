@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 18.15.0
       - run: npm version patch
-      - run: git push origin main --tags
+      - run: git push origin fix/deploy --tags
       - uses: actions/upload-artifact@v4
         with:
           name: src
