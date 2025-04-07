@@ -89,6 +89,11 @@ export const LogoBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    height: auto;
+    max-width: 100%;
+  }
 `;
 
 export const Contents = styled.div`
