@@ -23,11 +23,24 @@ interface UploadableImageProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onC
   onRemove?: () => void;
   reuploadable?: boolean;
   customStyle?: CustomStyle;
+  mediaType?: 'image' | 'video' | 'all';
 }
 
 const UploadableImage = forwardRef<HTMLDivElement, UploadableImageProps>(
   (
-    { src, alt, width = 120, height = 120, onChange, onClick, onRemove, reuploadable = false, customStyle, ...props },
+    {
+      src,
+      alt,
+      width = 120,
+      height = 120,
+      onChange,
+      onClick,
+      onRemove,
+      reuploadable = false,
+      customStyle,
+      mediaType = 'all',
+      ...props
+    },
     ref
   ) => {
     const [loaded, setLoaded] = useState(false);
@@ -112,7 +125,13 @@ const UploadableImage = forwardRef<HTMLDivElement, UploadableImageProps>(
           }}
         />
         {Boolean(onChange) && (
-          <FileInput ref={inputFileRef} type="file" multiple accept="image/*, .pdf, video/*" onChange={onChange} />
+          <FileInput
+            ref={inputFileRef}
+            type="file"
+            multiple
+            accept={mediaType === 'image' ? 'image/*' : mediaType === 'video' ? 'video/*' : 'image/*, .pdf, video/*'}
+            onChange={onChange}
+          />
         )}
       </ImageWrapper>
     );
