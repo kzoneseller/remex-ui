@@ -29,9 +29,9 @@ export const BackDrop = styled.div<{ open: boolean }>`
   align-items: center;
   justify-content: center;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  // background-color: rgba(0, 0, 0, 0.5);
   -webkit-tap-highlight-color: transparent;
-  z-index: 199;
+  // z-index: 199;
 
   ${({ open }) =>
     open
